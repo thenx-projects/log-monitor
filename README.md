@@ -1,4 +1,4 @@
-## 环保工程API[![Build Status](https://travis-ci.org/apache/rocketmq.svg?branch=master)]() [![Coverage Status](https://coveralls.io/repos/github/apache/rocketmq/badge.svg?branch=master)]()
+## log-monitor 日志监控与Tomcat控制[![Build Status](https://travis-ci.org/apache/rocketmq.svg?branch=master)]() [![Coverage Status](https://coveralls.io/repos/github/apache/rocketmq/badge.svg?branch=master)]()
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.apache.rocketmq/rocketmq-all/badge.svg)]()
 [![GitHub release](https://img.shields.io/badge/release-download-orange.svg)]()
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)]()
@@ -38,22 +38,15 @@
 - **GitLab Clone 项目 + 分支（develop）工作流程**
 
 	我们这里以zlapp为例，我们进入如下地址看到我们所有的项目：
-	[http://10.68.16.171/zlapp/quailtyWeb]
+	[https://github.com/thenx-projects/log-monitor.git]
 	
 	1. 执行如下语句直接clone + 切换分支：
 	
-	`$ git clone -b develop http://10.68.16.171/zlapp/quailtyWeb.git`
+	`$ git clone -b develop https://github.com/thenx-projects/log-monitor.git`
 
 	2. 增加主分支的最新代码可以用下面的命令切换:
 
-		`$ git remote add upstream http://10.68.16.171/zlapp/quailtyWeb.git`
-
-	3. 最后git remote -v应该看到类似下面的输出
-        `origin  http://10.68.16.171/zlapp/quailtyWeb.git (fetch)
-         origin  http://10.68.16.171/zlapp/quailtyWeb.git (push)
-         upstream        http://10.68.16.171/zlapp/quailtyWeb.git (fetch)
-         upstream        http://10.68.16.171/zlapp/quailtyWeb.git (push)
-        `
+		`$ git remote add upstream https://github.com/thenx-projects/log-monitor.git`
 
 ----------
 
