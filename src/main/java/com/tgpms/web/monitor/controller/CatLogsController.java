@@ -60,15 +60,15 @@ public class CatLogsController {
     }
 
     /**
-     * 查询 catalina 日志
+     * 查询指定日志
      *
      * @param location 文件路径
      * @param fileName 文件名称
      * @return null
      */
-    @ApiOperation(value = "查询 catalina 日志", notes = "查询 catalina 日志", httpMethod = "POST")
-    @PostMapping(value = "/catCatalina")
-    public Result catCatalina(@RequestParam("location") String location, @RequestParam("fileName") String fileName) {
+    @ApiOperation(value = "查询指定日志", notes = "查询指定日志", httpMethod = "POST")
+    @PostMapping(value = "/catLogs")
+    public Result catLogs(@RequestParam("location") String location, @RequestParam("fileName") String fileName) {
         Result result = new Result();
         List<String> catalina = new ArrayList<>();
         if (StringUtil.isNullOrEmpty(location) || StringUtil.isNullOrEmpty(fileName)) {
@@ -77,7 +77,7 @@ public class CatLogsController {
             throw new QueryException(ExceptionExplain.EMPTY_BY_LOCATION_OR_FILENAME.getExplain());
         } else {
             try {
-                catalina = catLogsService.catCatalina(location, fileName);
+                catalina = catLogsService.catLogs(location, fileName);
             } catch (Exception e) {
                 result.setMsg(ExceptionExplain.ERROR_BY_QUERY.getExplain());
                 result.setSuccess(false);

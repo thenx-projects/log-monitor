@@ -24,7 +24,7 @@ public class CatLogsServiceImplTest {
         String location = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs";
         String file = "catalina.2019-08-06.log";
 
-        log.info("\n ----> data: " + catLogsService.catCatalina(location, file));
+        log.info("\n ----> data: " + catLogsService.catLogs(location, file));
     }
 
     @Test

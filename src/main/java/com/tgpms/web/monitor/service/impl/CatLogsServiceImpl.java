@@ -24,66 +24,16 @@ import java.util.Objects;
 public class CatLogsServiceImpl implements CatLogsService {
 
     /**
-     * 查询 catalina 日志
+     * 查询 指定 日志
      *
      * @param location 文件路径
      * @param fileName 文件名称
      * @return null
      */
     @Override
-    public List<String> catCatalina(String location, String fileName) {
+    public List<String> catLogs(String location, String fileName) {
         CoreControl control = new CoreControl();
         return control.core(location, fileName);
-    }
-
-    /**
-     * 查询 hostManager 日志
-     *
-     * @return null
-     */
-    @Override
-    public List<String> catHostManager() {
-        return null;
-    }
-
-    /**
-     * 查询 localhost 日志
-     *
-     * @return null
-     */
-    @Override
-    public List<String> catLocalhost() {
-        return null;
-    }
-
-    /**
-     * 查询 localhostAccessLog 日志
-     *
-     * @return null
-     */
-    @Override
-    public List<String> catLocalhostAccessLog() {
-        return null;
-    }
-
-    /**
-     * 查询 manager 日志
-     *
-     * @return null
-     */
-    @Override
-    public List<String> catManager() {
-        return null;
-    }
-
-    /**
-     * 查询 debug 日志
-     *
-     * @return null
-     */
-    @Override
-    public List<String> debug() {
-        return null;
     }
 
     /**
