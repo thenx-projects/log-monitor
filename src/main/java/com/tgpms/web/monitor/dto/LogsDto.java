@@ -34,4 +34,9 @@ public class LogsDto {
      * 5. manager 日志
      */
     private String manager;
+
+    /**
+     * 6. debug 日志
+     */
+    private String debug;
 }

@@ -43,4 +43,18 @@ public interface CatLogsService {
      * @return null
      */
     List<String> catManager();
+
+    /**
+     * 查询 debug 日志
+     *
+     * @return null
+     */
+    List<String> debug();
+
+    /**
+     * 当前目录所有日志
+     *
+     * @return null
+     */
+    List<String> findAll(String location);
 }
