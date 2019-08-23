@@ -1,5 +1,6 @@
 package com.tgpms.web.monitor.service.impl;
 
+import com.tgpms.web.monitor.core.CoreControl;
 import com.tgpms.web.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,11 +26,14 @@ public class CatLogsServiceImpl implements CatLogsService {
     /**
      * 查询 catalina 日志
      *
+     * @param location 文件路径
+     * @param fileName 文件名称
      * @return null
      */
     @Override
-    public List<String> catCatalina() {
-        return null;
+    public List<String> catCatalina(String location, String fileName) {
+        CoreControl control = new CoreControl();
+        return control.core(location, fileName);
     }
 
     /**

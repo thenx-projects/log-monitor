@@ -12,9 +12,11 @@ public interface CatLogsService {
     /**
      * 查询 catalina 日志
      *
+     * @param location 文件路径
+     * @param fileName 文件名称
      * @return null
      */
-    List<String> catCatalina();
+    List<String> catCatalina(String location, String fileName);
 
     /**
      * 查询 hostManager 日志

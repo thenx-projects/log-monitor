@@ -36,7 +36,9 @@ public enum ExceptionExplain {
     ERROR_BY_VFORM_POST(-10,"同步请求失败"),
 
     // Token 为空
-    ERROR_BY_TOKEN_EMPTY(-11, "Token 为空")
+    ERROR_BY_TOKEN_EMPTY(-11, "Token 为空"),
+
+    EMPTY_BY_LOCATION_OR_FILENAME(-12, "文件路径或文件名为空")
     ;
 
     /**

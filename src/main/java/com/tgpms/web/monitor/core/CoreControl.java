@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,13 +18,12 @@ import java.util.Objects;
 @Slf4j
 public class CoreControl {
 
-    public String core() {
+    public List<String> core(String location, String fileName) {
+        List<String> addLine = new ArrayList<>();
         Runtime rt = Runtime.getRuntime();
         Process p = null;
-        String data = null;
         try {
-            p = rt.exec("cmd /k cd C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs & " +
-                    "type catalina.2019-08-06.log");
+            p = rt.exec("cmd /c cd " + location + " & type " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,13 +35,20 @@ public class CoreControl {
                 if ((line = br.readLine()) == null) {
                     break;
                 }
-                data = new String(line.getBytes(), "GBK");
-                br.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            try {
+                addLine.add(new String(Objects.requireNonNull(line).getBytes(), "GBK"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
-        log.info("=============> over");
-        return data;
+        try {
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return addLine;
     }
 }
