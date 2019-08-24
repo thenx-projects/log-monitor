@@ -14,7 +14,7 @@
     <groupId>com.tgpms</groupId>
     <artifactId>log-monitor</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>log-monitor ${project.version}</name>
     <description>日志监控</description>
 
@@ -33,6 +33,7 @@
 
     <modules>
         <module>monitor-cat</module>
+        <module>monitor-common</module>
     </modules>
 
     <dependencies>
