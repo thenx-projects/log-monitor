@@ -55,14 +55,12 @@ public class CatLogsServiceImpl implements CatLogsService {
      */
     private List<String> listAll(File dir) {
         List<String> fileData = new ArrayList<>();
-        log.info("\n =======> dir is : " + dir.getName());
         File[] files = dir.listFiles();
         for (File file : Objects.requireNonNull(files)) {
             if (file.isDirectory()) {
                 listAll(file);
             } else {
                 fileData.add(file.getName());
-                log.info("\n ==========> file is : " + file.getName());
             }
         }
         return fileData;
