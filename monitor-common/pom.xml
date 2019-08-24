@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>monitor-common</name>
     <packaging>jar</packaging>
-    <description>Demo project for Spring Boot</description>
+    <description>公共配置模块</description>
 
     <properties>
         <java.version>1.8</java.version>
