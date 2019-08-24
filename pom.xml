@@ -31,6 +31,10 @@
         <skiptests>true</skiptests>
     </properties>
 
+    <modules>
+        <module>monitor-cat</module>
+    </modules>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
         <dependency>
@@ -176,33 +180,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.monitor</groupId>
+                <artifactId>monitor-cat</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.rat</groupId>
-                <artifactId>apache-rat-plugin</artifactId>
-                <version>0.12</version>
-                <configuration>
-                    <excludes>
-                        <exclude>.gitignore</exclude>
-                        <exclude>.application.yml</exclude>
-                        <exclude>src/test/*</exclude>
-                        <exclude>*/target/**</exclude>
-                        <exclude>*/*.iml</exclude>
-                        <exclude>docs/**</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
 
 </project>
