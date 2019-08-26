@@ -97,7 +97,7 @@ public class CatLogsController {
      *
      * @param location 地址
      * @param logsName 日志名
-     * @param pageNo 分页码农
+     * @param pageNo   分页码农
      * @return null
      */
     @ApiOperation(value = "查询指定日志 分页版", notes = "查询指定日志 分页版", httpMethod = "POST")
@@ -123,7 +123,7 @@ public class CatLogsController {
      * 查询所有日志 分页版
      *
      * @param location 路径
-     * @param pageNo 页码
+     * @param pageNo   页码
      * @return null
      */
     @ApiOperation(value = "查询所有日志 分页版", notes = "查询所有日志 分页版", httpMethod = "POST")
@@ -141,6 +141,29 @@ public class CatLogsController {
             throw new QueryException(e.getMessage() + ExceptionExplain.ERROR_BY_PARSING.getExplain());
         }
         return pageView;
+    }
+
+    /**
+     * 当前目录所有日志 仅仅查询名称
+     *
+     * @param location 路径
+     * @return null
+     */
+    @ApiOperation(value = "当前目录所有日志 仅仅查询名称", notes = "当前目录所有日志 仅仅查询名称", httpMethod = "POST")
+    @PostMapping(value = "/findAllName")
+    public Result findAllName(@RequestParam("location") String location) {
+        Result result = new Result();
+        List<String> allName;
+        try {
+            allName = catLogsService.findAllName(location);
+        } catch (Exception e) {
+            result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+            result.setSuccess(false);
+            e.printStackTrace();
+            throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+        }
+        result.setData(allName);
+        return result;
     }
 
 }

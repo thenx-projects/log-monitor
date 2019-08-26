@@ -43,4 +43,11 @@ public interface CatLogsService {
      * @return null
      */
     PageView findAllPage(PageView pageView);
+
+    /**
+     * 当前目录所有日志 仅仅查找名称
+     *
+     * @return null
+     */
+    List<String> findAllName(String location);
 }

@@ -102,4 +102,25 @@ public class CatLogsServiceImpl implements CatLogsService {
         }
         return fileData;
     }
+
+    /**
+     * 仅仅查询所有的日志名称
+     *
+     * @param location 路径名称
+     * @return null
+     */
+    @Override
+    public List<String> findAllName(String location) {
+        File dir = new File(location);
+        List<String> list = new ArrayList<>();
+        List<LogsDto> logsDtos = listAll(dir);
+        for (LogsDto logsDto : logsDtos) {
+            String logsName = logsDto.getLogsName();
+            String substring = logsName.substring(0, logsName.indexOf("."));
+            if (! list.contains(substring)) {
+                list.add(substring);
+            }
+        }
+        return list;
+    }
 }
