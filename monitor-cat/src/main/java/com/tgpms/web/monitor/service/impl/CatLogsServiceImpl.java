@@ -123,4 +123,25 @@ public class CatLogsServiceImpl implements CatLogsService {
         }
         return list;
     }
+
+    /**
+     * 根据日志名称查询相关日志
+     *
+     * @param location 路径
+     * @param logsName 日志名称
+     * @return null
+     */
+    @Override
+    public List<String> findByLogsName(String location, String logsName) {
+        List<String> list = new ArrayList<>();
+        File file = new File(location);
+        List<LogsDto> logsDtos = listAll(file);
+        for (LogsDto logsDto : logsDtos) {
+            String name = logsDto.getLogsName();
+            if (name.contains(logsName)) {
+                list.add(name);
+            }
+        }
+        return list;
+    }
 }

@@ -50,4 +50,13 @@ public interface CatLogsService {
      * @return null
      */
     List<String> findAllName(String location);
+
+    /**
+     * 根据日志名称查询相关日志
+     *
+     * @param location 日志路径
+     * @param logsName 日志名称
+     * @return null
+     */
+    List<String> findByLogsName(String location, String logsName);
 }

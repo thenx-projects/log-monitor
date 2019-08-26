@@ -166,4 +166,28 @@ public class CatLogsController {
         return result;
     }
 
+    /**
+     * 根据日志名称查询相关日志
+     *
+     * @param location 路径
+     * @param logsName 日志名称
+     * @return null
+     */
+    @ApiOperation(value = "根据日志名称查询相关日志", notes = "根据日志名称查询相关日志", httpMethod = "POST")
+    @PostMapping(value = "/logsName")
+    public Result logsName(@RequestParam("location") String location, @RequestParam("logsName") String logsName) {
+        Result result = new Result();
+        List<String> byLogsName;
+        try {
+            byLogsName = catLogsService.findByLogsName(location, logsName);
+        } catch (Exception e) {
+            result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+            result.setSuccess(false);
+            e.printStackTrace();
+            throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+        }
+        result.setData(byLogsName);
+        return result;
+    }
+
 }
