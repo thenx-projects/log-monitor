@@ -1,8 +1,10 @@
 package com.tgpms.web.monitor.controller;
 
+import com.tgpms.common.PageView;
 import com.tgpms.common.Result;
 import com.tgpms.exception.ExceptionExplain;
 import com.tgpms.exception.QueryException;
+import com.tgpms.web.monitor.dto.LogsDto;
 import com.tgpms.web.monitor.service.CatLogsService;
 import io.netty.util.internal.StringUtil;
 import io.swagger.annotations.Api;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author May
@@ -41,7 +45,7 @@ public class CatLogsController {
     @PostMapping(value = "/findAll")
     public Result findAll(@RequestParam("location") String location) {
         Result result = new Result();
-        List<String> allFiles = new ArrayList<>();
+        List<LogsDto> allFiles = new ArrayList<>();
         if (StringUtil.isNullOrEmpty(location)) {
             result.setMsg(ExceptionExplain.EMPTY_BY_DATA.getExplain());
             result.setSuccess(false);
@@ -88,5 +92,55 @@ public class CatLogsController {
         }
     }
 
+    /**
+     * 查询指定日志 分页版
+     *
+     * @param location 地址
+     * @param logsName 日志名
+     * @param pageNo 分页码农
+     * @return null
+     */
+    @ApiOperation(value = "查询指定日志 分页版", notes = "查询指定日志 分页版", httpMethod = "POST")
+    @PostMapping(value = "/catLogsPage")
+    public PageView catLogsPage(@RequestParam("location") String location, @RequestParam("fileName") String logsName,
+                                @RequestParam("pageNo") Integer pageNo) {
+        PageView pageView = new PageView();
+        pageView.setPageNow(pageNo);
+        Map<String, String> map = new HashMap<>(16);
+        map.put("location", location);
+        map.put("logsName", logsName);
+        pageView.setQueryMap(map);
+        try {
+            pageView = catLogsService.catLogsPage(pageView);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new QueryException(e.getMessage() + ExceptionExplain.ERROR_BY_PARSING.getExplain());
+        }
+        return pageView;
+    }
+
+    /**
+     * 查询所有日志 分页版
+     *
+     * @param location 路径
+     * @param pageNo 页码
+     * @return null
+     */
+    @ApiOperation(value = "查询所有日志 分页版", notes = "查询所有日志 分页版", httpMethod = "POST")
+    @PostMapping(value = "/findAllPage")
+    public PageView findAllPage(@RequestParam("location") String location, @RequestParam("pageNo") Integer pageNo) {
+        PageView pageView = new PageView();
+        pageView.setPageNow(pageNo);
+        Map<String, String> map = new HashMap<>(16);
+        map.put("location", location);
+        pageView.setQueryMap(map);
+        try {
+            pageView = catLogsService.findAllPage(pageView);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new QueryException(e.getMessage() + ExceptionExplain.ERROR_BY_PARSING.getExplain());
+        }
+        return pageView;
+    }
 
 }

@@ -1,6 +1,8 @@
 package com.tgpms.web.monitor.service.impl;
 
+import com.tgpms.common.PageView;
 import com.tgpms.web.monitor.core.CoreControl;
+import com.tgpms.web.monitor.dto.LogsDto;
 import com.tgpms.web.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -9,9 +11,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author May
@@ -42,9 +44,41 @@ public class CatLogsServiceImpl implements CatLogsService {
      * @return null
      */
     @Override
-    public List<String> findAll(String location) {
+    public List<LogsDto> findAll(String location) {
         File dir = new File(location);
         return listAll(dir);
+    }
+
+    /**
+     * 查询指定日志 分页版
+     *
+     * @param pageView 分页
+     * @return null
+     */
+    @Override
+    public PageView catLogsPage(PageView pageView) {
+        CoreControl control = new CoreControl();
+        Map map = pageView.getQueryMap();
+        String location = (String) map.get("location");
+        String fileName = (String) map.get("fileName");
+        pageView.setRecords(control.core(location, fileName));
+        return pageView;
+    }
+
+    /**
+     * 查询所有日志 分页版
+     *
+     * @param pageView 分页
+     * @return null
+     */
+    @Override
+    public PageView findAllPage(PageView pageView) {
+        Map queryMap = pageView.getQueryMap();
+        String location = (String) queryMap.get("location");
+        File dir = new File(location);
+        List<LogsDto> logsDtos = listAll(dir);
+        pageView.setRecords(logsDtos);
+        return pageView;
     }
 
     /**
@@ -53,14 +87,17 @@ public class CatLogsServiceImpl implements CatLogsService {
      * @param dir 指定目录
      * @return null
      */
-    private List<String> listAll(File dir) {
-        List<String> fileData = new ArrayList<>();
+    private List<LogsDto> listAll(File dir) {
+        List<LogsDto> fileData = new ArrayList<>();
         File[] files = dir.listFiles();
         for (File file : Objects.requireNonNull(files)) {
             if (file.isDirectory()) {
                 listAll(file);
             } else {
-                fileData.add(file.getName());
+                LogsDto logsDto = new LogsDto();
+                logsDto.setLogsName(file.getName());
+                logsDto.setLogsDate(file.getName().substring(file.getName().indexOf("."), file.getName().lastIndexOf(".")));
+                fileData.add(logsDto);
             }
         }
         return fileData;

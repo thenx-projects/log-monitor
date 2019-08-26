@@ -2,6 +2,8 @@ package com.tgpms.web.monitor.dto;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @author May
  * <p>
@@ -11,32 +13,12 @@ import lombok.Data;
 public class LogsDto {
 
     /**
-     * 1. catalina 日志
+     * 1. 日志名称
      */
-    private String catalina;
+    private String logsName;
 
     /**
-     * 2. host-manager 日志
+     * 2. 日志时间
      */
-    private String hostManager;
-
-    /**
-     * 3. localhost 日志
-     */
-    private String localhost;
-
-    /**
-     * 4. localhost_access_log 日志
-     */
-    private String localhostAccessLog;
-
-    /**
-     * 5. manager 日志
-     */
-    private String manager;
-
-    /**
-     * 6. debug 日志
-     */
-    private String debug;
+    private String logsDate;
 }

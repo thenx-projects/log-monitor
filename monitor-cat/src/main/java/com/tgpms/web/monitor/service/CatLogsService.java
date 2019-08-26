@@ -1,5 +1,8 @@
 package com.tgpms.web.monitor.service;
 
+import com.tgpms.common.PageView;
+import com.tgpms.web.monitor.dto.LogsDto;
+
 import java.util.List;
 
 /**
@@ -23,5 +26,21 @@ public interface CatLogsService {
      *
      * @return null
      */
-    List<String> findAll(String location);
+    List<LogsDto> findAll(String location);
+
+    /**
+     * 查询对应日志 分页版
+     *
+     * @param pageView 分页
+     * @return null
+     */
+    PageView catLogsPage(PageView pageView);
+
+    /**
+     * 查询所有日志 分页版
+     *
+     * @param pageView 分页
+     * @return null
+     */
+    PageView findAllPage(PageView pageView);
 }
