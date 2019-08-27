@@ -37,7 +37,7 @@ public class UserController {
      */
     @ApiOperation(value = "用户登录校验相关接口", notes = "用户登录校验相关接口", httpMethod = "POST")
     @PostMapping(value = "/userLogin")
-    public Result userLogin(@RequestParam("userId") String userId, @RequestParam("userPwd") String userPwd) {
+    public Result userLogin(@RequestParam(value = "userId") String userId, @RequestParam(value = "userPwd") String userPwd) {
         Result result = new Result();
         boolean byUserId = userService.findByUserId(userId, userPwd);
         if (byUserId) {
@@ -45,7 +45,6 @@ public class UserController {
         } else {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
             result.setSuccess(false);
-            throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
         }
         return result;
     }

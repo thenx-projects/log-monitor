@@ -1,5 +1,7 @@
 package com.tgpms.web.monitor.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.tgpms.common.PageView;
 import com.tgpms.common.Result;
 import com.tgpms.exception.ExceptionExplain;
@@ -153,16 +155,16 @@ public class CatLogsController {
     @PostMapping(value = "/findAllName")
     public Result findAllName(@RequestParam("location") String location) {
         Result result = new Result();
-        List<String> allName;
+        List<String> allName = new ArrayList<>();
         try {
             allName = catLogsService.findAllName(location);
         } catch (Exception e) {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
             result.setSuccess(false);
             e.printStackTrace();
-            throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
         }
-        result.setData(allName);
+        JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(allName));
+        result.setData(jsonArray);
         return result;
     }
 
@@ -180,6 +182,30 @@ public class CatLogsController {
         List<String> byLogsName;
         try {
             byLogsName = catLogsService.findByLogsName(location, logsName);
+        } catch (Exception e) {
+            result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+            result.setSuccess(false);
+            e.printStackTrace();
+            throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
+        }
+        result.setData(byLogsName);
+        return result;
+    }
+
+    /**
+     * 根据日志名称精确查找
+     *
+     * @param location 路径
+     * @param logsName 日志名称
+     * @return null
+     */
+    @ApiOperation(value = "根据日志名称精确查找", notes = "根据日志名称精确查找", httpMethod = "POST")
+    @PostMapping(value = "/findByEqualsName")
+    public Result findByEqualsName(@RequestParam("location") String location, @RequestParam("logsName") String logsName) {
+        Result result = new Result();
+        List<String> byLogsName;
+        try {
+            byLogsName = catLogsService.findByEqualsName(location, logsName);
         } catch (Exception e) {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
             result.setSuccess(false);

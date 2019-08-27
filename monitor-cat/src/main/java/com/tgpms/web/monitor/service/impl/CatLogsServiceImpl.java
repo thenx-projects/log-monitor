@@ -96,7 +96,7 @@ public class CatLogsServiceImpl implements CatLogsService {
             } else {
                 LogsDto logsDto = new LogsDto();
                 logsDto.setLogsName(file.getName());
-                logsDto.setLogsDate(file.getName().substring(file.getName().indexOf("."), file.getName().lastIndexOf(".")));
+                logsDto.setLogsDate(file.getName().substring(file.getName().indexOf("."), file.getName().lastIndexOf(".")).replace(".", ""));
                 fileData.add(logsDto);
             }
         }
@@ -139,6 +139,27 @@ public class CatLogsServiceImpl implements CatLogsService {
         for (LogsDto logsDto : logsDtos) {
             String name = logsDto.getLogsName();
             if (name.contains(logsName)) {
+                list.add(name);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 根据日志名称精确查找
+     *
+     * @param location 日志路径
+     * @param logsName 日志名称
+     * @return null
+     */
+    @Override
+    public List<String> findByEqualsName(String location, String logsName) {
+        List<String> list = new ArrayList<>();
+        File file = new File(location);
+        List<LogsDto> logsDtos = listAll(file);
+        for (LogsDto logsDto : logsDtos) {
+            String name = logsDto.getLogsName();
+            if (name.equals(logsName)) {
                 list.add(name);
             }
         }

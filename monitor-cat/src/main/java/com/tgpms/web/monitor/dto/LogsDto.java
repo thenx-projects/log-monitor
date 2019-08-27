@@ -21,4 +21,5 @@ public class LogsDto {
      * 2. 日志时间
      */
     private String logsDate;
+
 }

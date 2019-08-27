@@ -28,7 +28,7 @@ public class WebAuthConfiguration extends WebSecurityConfigurerAdapter {
 	@Bean
 	public AuthTokenFilter authenticationTokenFilterBean() throws Exception{
 		List<String> pathsToSkip = Collections.singletonList("/login");
-		List<String> processingPath = Arrays.asList("/ev/**","/logout");
+		List<String> processingPath = Arrays.asList("/log/**","/logout");
 		SkipPathRequestMatcher matcher = new SkipPathRequestMatcher(pathsToSkip, processingPath);
 		AuthTokenFilter filter = new AuthTokenFilter(matcher);
 		filter.setAuthenticationManager(this.authenticationManager());
