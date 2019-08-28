@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h2>用户登录</h2>
+            <form class="form-horizontal" action="login" method="post" id="loginform">
+                <div class="form-group">
+                    <div class="input-group col-md-4">
+                     <span class="input-group-addon"><i
+                             class="glyphicon glyphicon-user"></i></span> <input
+                            class="form-control" placeholder="用户名/邮箱" type="text"
+                            name="loginName" id="loginName"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-4">
+                     <span class="input-group-addon"><i
+                             class="glyphicon glyphicon-lock"></i></span> <input
+                            class="form-control" placeholder="密码" type="password"
+                            name="password" id="password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success" id="loginbtn">
+                                    <span class="glyphicon glyphicon-log-in"></span>&nbsp;登录
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger" id="registerbtn">
+                                    <span class="glyphicon glyphicon-edit"></span>&nbsp;注册
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
+<script type="application/javascript" src="./common/footer.js"></script>
 </html>
