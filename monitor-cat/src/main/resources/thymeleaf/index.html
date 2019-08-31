@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{~/static/css/layui.css}"/>
+    <link th:href="@{/css/layui.css}" rel="stylesheet"/>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -75,8 +75,7 @@
         © layui.com - 底部固定区域
     </div>
 </div>
-<script type="application/javascript" src="../static/layui.all.js"></script>
-<script>
+<script th:src="@{/layui.js}"></script><script>
     //JavaScript代码区域
     layui.use('element', function () {
         var element = layui.element;
