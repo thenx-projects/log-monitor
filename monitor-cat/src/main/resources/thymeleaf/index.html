@@ -75,21 +75,33 @@
 </div>
 
 <script type="text/html" id="toolbarDemo">
-    <br />
-    <div class="layui-form-item">
-        <label class="layui-form-label">日志路径：</label>
-        <div class="layui-input-block">
-            <label>
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入路径" autocomplete="off"
-                       class="layui-input" style="width: 50%;">
-            </label>
-        </div>
-    </div>
+
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
     </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>Tomcat 日志路径</legend>
+    </fieldset>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">路径</label>
+        <div class="layui-input-block">
+            <label>
+                <input type="text" name="location" lay-verify="title" autocomplete="off" placeholder="请输入路径"
+                       class="layui-input" id="location">
+            </label>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" onclick="commits()">立即提交</button>
+        </div>
+    </div>
+
 </script>
 
 <script type="text/html" id="barDemo">
@@ -100,6 +112,17 @@
 
 <script>
     var requestURL = 'http://localhost:8200';
+
+
+    /**
+     * 日志路径提交
+     */
+    function commits() {
+        var elementById = document.getElementById("location");
+        layer.alert(elementById, {
+            title: '最终的提交信息'
+        });
+    }
 
     layui.use(['table', 'element', 'jquery'], function () {
         var table = layui.table;
