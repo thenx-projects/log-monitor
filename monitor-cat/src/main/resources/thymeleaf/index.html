@@ -75,6 +75,16 @@
 </div>
 
 <script type="text/html" id="toolbarDemo">
+    <br />
+    <div class="layui-form-item">
+        <label class="layui-form-label">日志路径：</label>
+        <div class="layui-input-block">
+            <label>
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入路径" autocomplete="off"
+                       class="layui-input" style="width: 50%;">
+            </label>
+        </div>
+    </div>
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
@@ -83,23 +93,21 @@
 </script>
 
 <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">查看详细</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <script th:src="@{/layui.js}"></script>
 
 <script>
+    var requestURL = 'http://localhost:8200';
 
-    layui.use('table', function () {
+    layui.use(['table', 'element', 'jquery'], function () {
         var table = layui.table;
-        var colsData = [];
+        var $ = layui.jquery;
 
         table.render({
-            done: function (res, curr, count) {
-                alert(JSON.stringify(res));
-            },
             elem: '#test'
-            , url: 'http://localhost:8200/monitor/CatLogsController/findAll'
+            , url: requestURL + '/monitor/CatLogsController/findAll'
             , where: {
                 location: 'C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs'
             }
@@ -110,7 +118,7 @@
                 [
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'logsName', title: '日志名称', fixed: 'left', unresize: true, sort: true}
-                    , {field: 'logsDate', title: '日志产生时间', edit: 'text'}
+                    , {field: 'logsDate', title: '日志产生时间'}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
                 ]
             ]
@@ -138,30 +146,45 @@
         //监听行工具事件
         table.on('tool(test)', function (obj) {
             var data = obj.data;
-            //console.log(obj)
+            var logName = JSON.stringify(data.logsName);
+            console.log("-----------> is true successful data: " + JSON.stringify(data));
             if (obj.event === 'del') {
                 layer.confirm('真的删除行么', function (index) {
                     obj.del();
                     layer.close(index);
                 });
             } else if (obj.event === 'edit') {
-                layer.prompt({
-                    formType: 2
-                    , value: data.email
-                }, function (value, index) {
-                    obj.update({
-                        email: value
-                    });
-                    layer.close(index);
+                $.ajax({
+                    url: requestURL + '/monitor/CatLogsController/catLogs',
+                    type: 'post',
+                    async: true,
+                    data: {
+                        location: 'C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs',
+                        fileName: logName
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        var parsingData = JSON.stringify(data.data);
+                        layer.open({
+                            title: logName,
+                            type: 1,
+                            skin: 'layui-layer-demo',
+                            closeBtn: 1,
+                            area: ['50%', '50%'],
+                            maxmin: true,
+                            anim: 2,
+                            shadeClose: true,
+                            content: parsingData
+                        });
+                    }
                 });
             }
         });
     });
 
     //JavaScript代码区域
-    layui.use('element', function () {
+    layui.use(['element', 'jquery'], function () {
         var element = layui.element;
-
     });
 </script>
 </body>
