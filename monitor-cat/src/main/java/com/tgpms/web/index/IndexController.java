@@ -35,7 +35,6 @@ public class IndexController {
     public String index(HttpServletRequest request, Model model) {
         model.addAttribute("location", "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs");
         String realPath2 = request.getServletContext().getRealPath(File.separator);
-        log.info("\n ----------> location: " + realPath2);
         return "index";
     }
 

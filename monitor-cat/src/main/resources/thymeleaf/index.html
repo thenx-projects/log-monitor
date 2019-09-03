@@ -76,6 +76,15 @@
 
 <script type="text/html" id="toolbarDemo">
 
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>拖拽上传</legend>
+    </fieldset>
+
+    <div class="layui-upload-drag" id="test10">
+        <i class="layui-icon"></i>
+        <p>点击上传，或将文件拖拽到此处</p>
+    </div>
+
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
@@ -113,100 +122,115 @@
 <script th:inline="javascript">
     var requestURL = 'http://localhost:8200';
     var changeLocation = [[${location}]];
+    requestMethod(changeLocation);
 
     /**
      * 日志路径提交
      */
     function commits() {
-        var elementById = document.getElementById("loca").value;
-        changeLocation = elementById;
-        layer.alert(elementById, {
+        changeLocation = document.getElementById("loca").value;
+        requestMethod(changeLocation);
+        layer.alert(changeLocation, {
             title: '最终路径'
         });
     }
 
-    layui.use(['table', 'element', 'jquery'], function () {
-        var table = layui.table;
-        var $ = layui.jquery;
-        var locationInTomcat = changeLocation;
+    function requestMethod(change) {
+
+        layui.use(['table', 'element', 'jquery', 'upload'], function () {
+            var table = layui.table;
+            var $ = layui.jquery;
+            var upload = layui.upload;
+            var locationInTomcat = change;
+            console.log("-------------> use: " + locationInTomcat);
 
 
-        table.render({
-            elem: '#test'
-            , url: requestURL + '/monitor/CatLogsController/findAll'
-            , where: {
-                location: locationInTomcat
-            }
-            , method: 'post'
-            , toolbar: '#toolbarDemo'
-            , title: '用户数据表'
-            , cols: [
-                [
-                    {type: 'checkbox', fixed: 'left'}
-                    , {field: 'logsName', title: '日志名称', fixed: 'left', unresize: true, sort: true}
-                    , {field: 'logsDate', title: '日志产生时间'}
-                    , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
+            table.render({
+                elem: '#test'
+                , url: requestURL + '/monitor/CatLogsController/findAll'
+                , where: {
+                    location: locationInTomcat
+                }
+                , method: 'post'
+                , toolbar: '#toolbarDemo'
+                , title: '用户数据表'
+                , cols: [
+                    [
+                        {type: 'checkbox', fixed: 'left'}
+                        , {field: 'logsName', title: '日志名称', fixed: 'left', unresize: true, sort: true}
+                        , {field: 'logsDate', title: '日志产生时间'}
+                        , {fixed: 'right', title: '操作', toolbar: '#barDemo'}
+                    ]
                 ]
-            ]
-            , page: true
-        });
+                , page: true
+            });
 
-        //头工具栏事件
-        table.on('toolbar(test)', function (obj) {
-            var checkStatus = table.checkStatus(obj.config.id);
-            switch (obj.event) {
-                case 'getCheckData':
-                    var data = checkStatus.data;
-                    layer.alert(JSON.stringify(data));
-                    break;
-                case 'getCheckLength':
-                    var data = checkStatus.data;
-                    layer.msg('选中了：' + data.length + ' 个');
-                    break;
-                case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选' : '未全选');
-                    break;
-            }
-        });
+            //头工具栏事件
+            table.on('toolbar(test)', function (obj) {
+                var checkStatus = table.checkStatus(obj.config.id);
+                switch (obj.event) {
+                    case 'getCheckData':
+                        var data = checkStatus.data;
+                        layer.alert(JSON.stringify(data));
+                        break;
+                    case 'getCheckLength':
+                        var data = checkStatus.data;
+                        layer.msg('选中了：' + data.length + ' 个');
+                        break;
+                    case 'isAll':
+                        layer.msg(checkStatus.isAll ? '全选' : '未全选');
+                        break;
+                }
+            });
 
-        //监听行工具事件
-        table.on('tool(test)', function (obj) {
-            var data = obj.data;
-            var logName = JSON.stringify(data.logsName);
-            console.log("-----------> is true successful data: " + JSON.stringify(data));
-            if (obj.event === 'del') {
-                layer.confirm('真的删除行么', function (index) {
-                    obj.del();
-                    layer.close(index);
-                });
-            } else if (obj.event === 'edit') {
-                $.ajax({
-                    url: requestURL + '/monitor/CatLogsController/catLogs',
-                    type: 'post',
-                    async: true,
-                    data: {
-                        location: locationInTomcat,
-                        fileName: logName
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        var parsingData = JSON.stringify(data.data);
-                        layer.open({
-                            title: logName,
-                            type: 1,
-                            skin: 'layui-layer-demo',
-                            closeBtn: 1,
-                            area: ['50%', '50%'],
-                            maxmin: true,
-                            anim: 2,
-                            shadeClose: true,
-                            content: parsingData
-                        });
-                    }
-                });
-            }
+            //监听行工具事件
+            table.on('tool(test)', function (obj) {
+                var data = obj.data;
+                var logName = JSON.stringify(data.logsName);
+                console.log("-----------> is true successful data: " + JSON.stringify(data));
+                if (obj.event === 'del') {
+                    layer.confirm('真的删除行么', function (index) {
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if (obj.event === 'edit') {
+                    $.ajax({
+                        url: requestURL + '/monitor/CatLogsController/catLogs',
+                        type: 'post',
+                        async: true,
+                        data: {
+                            location: locationInTomcat,
+                            fileName: logName
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            var parsingData = JSON.stringify(data.data);
+                            layer.open({
+                                title: logName,
+                                type: 1,
+                                skin: 'layui-layer-demo',
+                                closeBtn: 1,
+                                area: ['50%', '50%'],
+                                maxmin: true,
+                                anim: 2,
+                                shadeClose: true,
+                                content: parsingData
+                            });
+                        }
+                    });
+                }
+            });
+
+            //拖拽上传
+            upload.render({
+                elem: '#test10'
+                ,url: requestURL + '/war/uploadWar'
+                ,done: function(res){
+                    console.log(JSON.stringify(res))
+                }
+            });
         });
-    });
+    }
 
     //JavaScript代码区域
     layui.use(['element', 'jquery'], function () {
