@@ -45,7 +45,7 @@
                     <a class="" href="javascript:">Windows 服务器</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:">日志监控</a></dd>
-                        <dd><a href="javascript:" onclick="warPage()">War包管理</a></dd>
+                        <dd><a href="javascript:">War包管理</a></dd>
                         <dd><a href="javascript:">Tomcat 管理</a></dd>
                     </dl>
                 </li>
@@ -126,34 +126,6 @@
         requestMethod(changeLocation);
         layer.alert(changeLocation, {
             title: '最终路径'
-        });
-    }
-
-    /**
-     * 弹出War包上传路径
-     */
-    function warPage() {
-        layer.open({
-            type: 2,
-            title: false,
-            closeBtn: 1,
-            shade: [0],
-            area: ['340px', '215px'],
-            offset: 'rb',
-            time: 2000,
-            anim: 2,
-            content: ['./war/msg', 'no'],
-            end: function () {
-                layer.open({
-                    type: 2,
-                    title: 'War 包发布',
-                    shadeClose: true,
-                    shade: false,
-                    maxmin: true,
-                    area: ['893px', '600px'],
-                    content: './war/warPage'
-                });
-            }
         });
     }
 
@@ -246,18 +218,18 @@
             //拖拽上传
             upload.render({
                 elem: '#test10'
-                , url: requestURL + '/war/uploadWar'
-                , done: function (res) {
+                ,url: requestURL + '/war/uploadWar'
+                ,done: function(res){
                     console.log(JSON.stringify(res))
                 }
             });
 
             upload.render({ //允许上传的文件后缀
                 elem: '#test3'
-                , url: requestURL + '/war/uploadWar'
-                , accept: 'file'
-                , exts: 'war'
-                , done: function (res) {
+                ,url: requestURL + '/war/uploadWar'
+                ,accept: 'file'
+                ,exts: 'war'
+                ,done: function(res){
                     layer.alert("上传成功");
                 }
             });
