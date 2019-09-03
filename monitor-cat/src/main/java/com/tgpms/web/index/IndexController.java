@@ -4,12 +4,15 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 
 /**
  * @author may
@@ -29,9 +32,22 @@ public class IndexController {
      */
     @ApiOperation(value = "log-monitor 首页", notes = "log-monitor 首页", httpMethod = "POST")
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
-    public String index() {
-        log.info("\n ----------> into the index method and page");
+    public String index(HttpServletRequest request, Model model) {
+        model.addAttribute("location", "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs");
+        String realPath2 = request.getServletContext().getRealPath(File.separator);
+        log.info("\n ----------> location: " + realPath2);
         return "index";
+    }
+
+    /**
+     * log-monitor 首页根目录
+     *
+     * @return null
+     */
+    @ApiOperation(value = "log-monitor 首页 根目录", notes = "log-monitor 首页 根目录", httpMethod = "POST")
+    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+    public String indexPath(HttpServletRequest request, Model model) {
+        return this.index(request, model);
     }
 
     /**
