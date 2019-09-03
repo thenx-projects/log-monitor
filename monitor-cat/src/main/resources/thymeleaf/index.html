@@ -53,7 +53,7 @@
                     <a href="javascript:">Linux 服务器</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:">日志监控</a></dd>
-                        <dd><a href="javascript:">War包管理</a></dd>
+                        <dd><a href="javascript:" onclick="statusManager">War包管理</a></dd>
                         <dd><a href="javascript:">Tomcat 管理</a></dd>
                     </dl>
                 </li>
@@ -77,18 +77,12 @@
 <script type="text/html" id="toolbarDemo">
 
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-        <legend>拖拽上传</legend>
+        <legend>上传 WAR</legend>
     </fieldset>
 
-    <div class="layui-upload-drag" id="test10">
-        <i class="layui-icon"></i>
-        <p>点击上传，或将文件拖拽到此处</p>
-    </div>
 
     <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+        <button type="button" class="layui-btn" id="test3"><i class="layui-icon"></i>上传文件</button>
     </div>
 
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
@@ -229,6 +223,17 @@
                     console.log(JSON.stringify(res))
                 }
             });
+
+            upload.render({ //允许上传的文件后缀
+                elem: '#test3'
+                ,url: requestURL + '/war/uploadWar'
+                ,accept: 'file'
+                ,exts: 'war'
+                ,done: function(res){
+                    layer.alert("上传成功");
+                }
+            });
+
         });
     }
 
