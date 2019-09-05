@@ -62,7 +62,6 @@
     }
 
     function requestMethod(change) {
-
         layui.use(['table', 'element', 'jquery', 'upload'], function () {
             var table = layui.table;
             var $ = layui.jquery;
@@ -75,7 +74,7 @@
                 , url: requestURL + '/war/uploadWar'
                 , accept: 'file'
                 , data: {
-                    "warAddress": 123
+                    "warPath": change
                 }
                 , multiple: true
                 , auto: false

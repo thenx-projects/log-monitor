@@ -32,7 +32,7 @@ import static com.sun.xml.internal.fastinfoset.util.DuplicateAttributeVerifier.M
 @Slf4j
 public class WarController {
 
-    private final static String UPLOAD_FILE_PATH = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64";
+    private final static String WAR_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64";
 
     /**
      * war 包相关页面
@@ -41,7 +41,8 @@ public class WarController {
      */
     @ApiOperation(value = "war 包相关页面", notes = "war 包相关页面", httpMethod = "POST")
     @GetMapping(value = "/warPage")
-    public String warPage() {
+    public String warPage(Model model) {
+        model.addAttribute("location", WAR_LOCATION);
         return "war";
     }
 
@@ -65,12 +66,12 @@ public class WarController {
     @ApiOperation(value = "War 包的上传", notes = "War 包的上传", httpMethod = "POST")
     @PostMapping(value = "/uploadWar")
     @ResponseBody
-    public String uploadWar(@RequestParam("file") MultipartFile file) {
+    public String uploadWar(@RequestParam("file") MultipartFile file, @RequestParam("warPath") String warPath) {
         if (!file.isEmpty()) {
             Map<String, String> resObj = new HashMap<>();
             try {
                 BufferedOutputStream out = new BufferedOutputStream(
-                        new FileOutputStream(new File(UPLOAD_FILE_PATH, Objects.requireNonNull(file.getOriginalFilename()))));
+                        new FileOutputStream(new File(warPath, Objects.requireNonNull(file.getOriginalFilename()))));
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
