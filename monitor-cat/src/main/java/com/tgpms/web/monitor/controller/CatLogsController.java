@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,14 +51,12 @@ public class CatLogsController {
         List<LogsDto> allFiles = new ArrayList<>();
         if (StringUtil.isNullOrEmpty(location)) {
             result.setMsg(ExceptionExplain.EMPTY_BY_DATA.getExplain());
-            result.setSuccess(false);
             throw new QueryException(ExceptionExplain.EMPTY_BY_DATA.getExplain());
         } else {
             try {
                 allFiles = catLogsService.findAll(location);
             } catch (Exception e) {
                 result.setMsg(ExceptionExplain.ERROR_BY_QUERY.getExplain());
-                result.setSuccess(false);
                 e.printStackTrace();
             }
             result.setData(allFiles);
@@ -78,7 +77,6 @@ public class CatLogsController {
         Result result = new Result();
         List<String> catalina = new ArrayList<>();
         if (StringUtil.isNullOrEmpty(location) || StringUtil.isNullOrEmpty(fileName)) {
-            result.setSuccess(false);
             result.setMsg(ExceptionExplain.EMPTY_BY_LOCATION_OR_FILENAME.getExplain());
             throw new QueryException(ExceptionExplain.EMPTY_BY_LOCATION_OR_FILENAME.getExplain());
         } else {
@@ -86,7 +84,6 @@ public class CatLogsController {
                 catalina = catLogsService.catLogs(location, fileName);
             } catch (Exception e) {
                 result.setMsg(ExceptionExplain.ERROR_BY_QUERY.getExplain());
-                result.setSuccess(false);
                 e.printStackTrace();
             }
             result.setData(catalina);
@@ -160,7 +157,6 @@ public class CatLogsController {
             allName = catLogsService.findAllName(location);
         } catch (Exception e) {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
-            result.setSuccess(false);
             e.printStackTrace();
         }
         JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(allName));
@@ -184,7 +180,6 @@ public class CatLogsController {
             byLogsName = catLogsService.findByLogsName(location, logsName);
         } catch (Exception e) {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
-            result.setSuccess(false);
             e.printStackTrace();
             throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
         }
@@ -208,7 +203,6 @@ public class CatLogsController {
             byLogsName = catLogsService.findByEqualsName(location, logsName);
         } catch (Exception e) {
             result.setMsg(ExceptionExplain.ERROR_BY_PARSING.getExplain());
-            result.setSuccess(false);
             e.printStackTrace();
             throw new QueryException(ExceptionExplain.ERROR_BY_PARSING.getExplain());
         }

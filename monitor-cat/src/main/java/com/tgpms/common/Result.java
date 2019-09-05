@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @author May
  * <p>
- * 返回结果集
+ * layUI返回结果集
  */
 @Data
 public class Result implements Serializable {
@@ -18,9 +18,14 @@ public class Result implements Serializable {
     private static final long serialVersionUID = -7319737625485900657L;
 
     /**
-     * 默认返回状态
+     * 返回状态
      */
-    private Boolean success = true;
+    private Integer code = 0;
+
+    /**
+     * 返回统计
+     */
+    private Integer count = 1000;
 
     /**
      * 默认返回消息提醒
