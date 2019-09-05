@@ -12,6 +12,18 @@
         <legend>单个或多个War包的上传</legend>
     </fieldset>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">
+            <button class="layui-btn" lay-submit="" onclick="commits()">立即提交</button>
+        </label>
+        <div class="layui-input-block">
+            <label>
+                <input type="text" name="loca" lay-verify="title" autocomplete="off" placeholder="请输入路径"
+                       class="layui-input" id="loca" th:value="${location}" style="width: 80%">
+            </label>
+        </div>
+    </div>
+
     <div class="layui-upload">
         <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
         <div class="layui-upload-list">
@@ -30,16 +42,6 @@
         <button type="button" class="layui-btn" id="testListAction">开始上传</button>
     </div>
 
-
-    <!--    <div class="layui-form-item">-->
-    <!--        <label class="layui-form-label">路径</label>-->
-    <!--        <div class="layui-input-block">-->
-    <!--            <label>-->
-    <!--                <input type="text" name="loca" lay-verify="title" autocomplete="off" placeholder="请输入路径"-->
-    <!--                       class="layui-input" id="loca" th:value="${location}">-->
-    <!--            </label>-->
-    <!--        </div>-->
-    <!--    </div>-->
 </div>
 
 <script th:src="@{/layui.js}"></script>
@@ -49,6 +51,16 @@
     var changeLocation = [[${location}]];
     requestMethod(changeLocation);
 
+    /**
+     * war 包路径
+     */
+    function commits() {
+        changeLocation = document.getElementById("loca").value;
+        layer.alert(changeLocation, {
+            title: 'war 包路径'
+        });
+    }
+
     function requestMethod(change) {
 
         layui.use(['table', 'element', 'jquery', 'upload'], function () {
@@ -56,22 +68,15 @@
             var $ = layui.jquery;
             var upload = layui.upload;
 
-            upload.render({ //允许上传的文件后缀
-                elem: '#test3'
-                , url: requestURL + '/war/uploadWar'
-                , accept: 'file'
-                , exts: 'war'
-                , done: function (res) {
-                    layer.alert("上传成功");
-                }
-            });
-
             //多文件列表
             var demoListView = $('#demoList')
                 , uploadListIns = upload.render({
                 elem: '#testList'
                 , url: requestURL + '/war/uploadWar'
                 , accept: 'file'
+                , data: {
+                    "warAddress": 123
+                }
                 , multiple: true
                 , auto: false
                 , bindAction: '#testListAction'
