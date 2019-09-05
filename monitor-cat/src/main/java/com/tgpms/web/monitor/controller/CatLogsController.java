@@ -18,7 +18,6 @@ import org.thenx.common.vo.PageView;
 import org.thenx.common.vo.Result;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

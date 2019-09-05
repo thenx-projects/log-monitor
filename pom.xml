@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <inceptionYear>2019</inceptionYear>
-    <groupId>com.tgpms</groupId>
+    <groupId>org.thenx</groupId>
     <artifactId>log-monitor</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
@@ -150,7 +150,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.monitor</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-cat</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
