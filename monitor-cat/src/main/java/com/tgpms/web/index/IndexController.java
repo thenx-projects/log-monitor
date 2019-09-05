@@ -1,14 +1,12 @@
 package com.tgpms.web.index;
 
+import io.netty.util.internal.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +24,11 @@ import java.io.File;
 public class IndexController {
 
     /**
+     * 可修改的默认路径参数
+     */
+    private static String DEFAULT_LOCATION = "C:\\Users\\May\\Downloads";
+
+    /**
      * log-monitor 首页
      *
      * @return null
@@ -33,9 +36,26 @@ public class IndexController {
     @ApiOperation(value = "log-monitor 首页", notes = "log-monitor 首页", httpMethod = "POST")
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(HttpServletRequest request, Model model) {
-        model.addAttribute("location", "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs");
-        String realPath2 = request.getServletContext().getRealPath(File.separator);
+        model.addAttribute("location", DEFAULT_LOCATION);
         return "index";
+    }
+
+    /**
+     * log-monitor 保证后台同步默认值
+     *
+     * @return null
+     */
+    @ApiOperation(value = "log-monitor 保证后台同步默认值", notes = "log-monitor 保证后台同步默认值", httpMethod = "POST")
+    @RequestMapping(value = "/enterSm", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public boolean enterSm(String newLocation) {
+        if (! StringUtil.isNullOrEmpty(newLocation)) {
+            DEFAULT_LOCATION = newLocation;
+            return true;
+        } else {
+            DEFAULT_LOCATION = "C:\\Users\\";
+            return false;
+        }
     }
 
     /**

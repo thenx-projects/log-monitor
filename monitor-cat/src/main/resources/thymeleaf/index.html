@@ -107,16 +107,44 @@
 <script th:inline="javascript">
     var requestURL = 'http://localhost:8200';
     var changeLocation = [[${location}]];
-    requestMethod(changeLocation);
+    requestMethod();
 
     /**
      * 日志路径提交
      */
     function commits() {
+        enterAddress();
         changeLocation = document.getElementById("loca").value;
-        requestMethod(changeLocation);
+        requestMethod();
         layer.alert(changeLocation, {
             title: '最终路径'
+        });
+        window.location.reload();
+    }
+
+    /**
+     * 没有双向绑定就只有同步刷新
+     */
+    function enterAddress() {
+        layui.use(['element', 'jquery'], function () {
+            var element = layui.element;
+            var $ = layui.jquery;
+
+            var dataValue = document.getElementById("loca").value;
+
+            $.ajax({
+                type: "POST",
+                url: requestURL + '/enterSm',
+                data: {
+                    "newLocation": dataValue
+                },
+                success: function (result) {
+                },
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
         });
     }
 
@@ -148,13 +176,13 @@
         });
     }
 
-    function requestMethod(change) {
+    function requestMethod() {
 
         layui.use(['table', 'element', 'jquery', 'upload'], function () {
             var table = layui.table;
             var $ = layui.jquery;
             var upload = layui.upload;
-            var locationInTomcat = change;
+            var locationInTomcat = changeLocation;
 
             table.render({
                 elem: '#test'
