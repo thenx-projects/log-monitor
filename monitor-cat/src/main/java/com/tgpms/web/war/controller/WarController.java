@@ -42,7 +42,7 @@ public class WarController {
     @ApiOperation(value = "war 包相关页面", notes = "war 包相关页面", httpMethod = "POST")
     @GetMapping(value = "/warPage")
     public String warPage(Model model) {
-        model.addAttribute("location", WAR_LOCATION);
+//        model.addAttribute("location", WAR_LOCATION);
         return "war";
     }
 

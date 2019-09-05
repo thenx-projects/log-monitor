@@ -155,8 +155,6 @@
             var $ = layui.jquery;
             var upload = layui.upload;
             var locationInTomcat = change;
-            console.log("-------------> use: " + locationInTomcat);
-
 
             table.render({
                 elem: '#test'
@@ -231,15 +229,6 @@
                             });
                         }
                     });
-                }
-            });
-
-            //拖拽上传
-            upload.render({
-                elem: '#test10'
-                , url: requestURL + '/war/uploadWar'
-                , done: function (res) {
-                    console.log(JSON.stringify(res))
                 }
             });
 

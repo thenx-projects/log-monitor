@@ -14,12 +14,12 @@
 
     <div class="layui-form-item">
         <label class="layui-form-label">
-            <button class="layui-btn" lay-submit="" onclick="commits()">立即提交</button>
+            <button class="layui-btn" lay-submit="" onclick="commits()">保存路径</button>
         </label>
         <div class="layui-input-block">
             <label>
                 <input type="text" name="loca" lay-verify="title" autocomplete="off" placeholder="请输入路径"
-                       class="layui-input" id="loca" th:value="${location}" style="width: 80%">
+                       class="layui-input" id="loca" value="C:\Users" style="width: 80%">
             </label>
         </div>
     </div>
@@ -45,23 +45,21 @@
 </div>
 
 <script th:src="@{/layui.js}"></script>
-
-<script th:inline="javascript">
+<script type="text/javascript">
     var requestURL = 'http://localhost:8200';
-    var changeLocation = [[${location}]];
-    requestMethod(changeLocation);
+    // var changeLocation = [[${location}]];
+    var changeLocation = "";
 
     /**
      * war 包路径
      */
     function commits() {
         changeLocation = document.getElementById("loca").value;
-        layer.alert(changeLocation, {
-            title: 'war 包路径'
-        });
+        alert("当前路径：" + changeLocation);
+        requestMethod();
     }
 
-    function requestMethod(change) {
+    function requestMethod() {
         layui.use(['table', 'element', 'jquery', 'upload'], function () {
             var table = layui.table;
             var $ = layui.jquery;
@@ -74,7 +72,7 @@
                 , url: requestURL + '/war/uploadWar'
                 , accept: 'file'
                 , data: {
-                    "warPath": change
+                    "warPath": changeLocation
                 }
                 , multiple: true
                 , auto: false
