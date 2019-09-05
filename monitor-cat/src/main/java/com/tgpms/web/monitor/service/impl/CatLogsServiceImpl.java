@@ -96,7 +96,7 @@ public class CatLogsServiceImpl implements CatLogsService {
             } else {
                 LogsDto logsDto = new LogsDto();
                 logsDto.setLogsName(file.getName());
-                logsDto.setLogsDate(file.getName().substring(file.getName().indexOf("."), file.getName().lastIndexOf(".")).replace(".", ""));
+                logsDto.setLogsDate(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date(file.lastModified())));
                 fileData.add(logsDto);
             }
         }
