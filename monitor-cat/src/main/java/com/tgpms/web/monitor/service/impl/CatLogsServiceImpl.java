@@ -1,6 +1,5 @@
 package com.tgpms.web.monitor.service.impl;
 
-import com.tgpms.common.PageView;
 import com.tgpms.web.monitor.core.CoreControl;
 import com.tgpms.web.monitor.dto.LogsDto;
 import com.tgpms.web.monitor.service.CatLogsService;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.thenx.common.vo.PageView;
 
 import java.io.File;
 import java.text.ParseException;

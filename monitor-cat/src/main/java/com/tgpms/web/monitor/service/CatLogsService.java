@@ -1,7 +1,7 @@
 package com.tgpms.web.monitor.service;
 
-import com.tgpms.common.PageView;
 import com.tgpms.web.monitor.dto.LogsDto;
+import org.thenx.common.vo.PageView;
 
 import java.util.List;
 

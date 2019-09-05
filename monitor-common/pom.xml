@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.tgpms</groupId>
+    <groupId>com.thenx</groupId>
     <artifactId>monitor-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>monitor-common</name>
