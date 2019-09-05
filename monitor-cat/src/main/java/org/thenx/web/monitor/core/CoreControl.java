@@ -1,4 +1,4 @@
-package com.tgpms.web.monitor.core;
+package org.thenx.web.monitor.core;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.tgpms.web.index;
+package org.thenx.web.index;
 
 import io.netty.util.internal.StringUtil;
 import io.swagger.annotations.Api;

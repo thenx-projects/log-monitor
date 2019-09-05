@@ -1,8 +1,8 @@
-package com.tgpms.web.monitor.service.impl;
+package org.thenx.web.monitor.service.impl;
 
-import com.tgpms.web.monitor.core.CoreControl;
-import com.tgpms.web.monitor.dto.LogsDto;
-import com.tgpms.web.monitor.service.CatLogsService;
+import org.thenx.web.monitor.core.CoreControl;
+import org.thenx.web.monitor.dto.LogsDto;
+import org.thenx.web.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.thenx.common.vo.PageView;
 
 import java.io.File;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 

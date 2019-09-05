@@ -1,4 +1,4 @@
-package com.tgpms.web.war.controller;
+package org.thenx.web.war.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;

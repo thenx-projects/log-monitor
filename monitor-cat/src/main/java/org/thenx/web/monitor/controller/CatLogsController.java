@@ -1,9 +1,9 @@
-package com.tgpms.web.monitor.controller;
+package org.thenx.web.monitor.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.tgpms.web.monitor.dto.LogsDto;
-import com.tgpms.web.monitor.service.CatLogsService;
+import org.thenx.web.monitor.dto.LogsDto;
+import org.thenx.web.monitor.service.CatLogsService;
 import io.netty.util.internal.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

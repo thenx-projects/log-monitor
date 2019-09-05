@@ -1,4 +1,4 @@
-package com.tgpms.web.monitor.dto;
+package org.thenx.web.monitor.dto;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.tgpms;
+package org.thenx;
 
 
 import org.springframework.boot.SpringApplication;

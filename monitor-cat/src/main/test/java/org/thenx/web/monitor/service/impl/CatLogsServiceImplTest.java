@@ -1,6 +1,6 @@
-package com.tgpms.web.monitor.service.impl;
+package org.thenx.web.monitor.service.impl;
 
-import com.tgpms.web.monitor.service.CatLogsService;
+import org.thenx.web.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,8 +12,6 @@ import javax.annotation.Resource;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

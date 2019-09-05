@@ -1,4 +1,4 @@
-package com.tgpms;
+package org.thenx;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
