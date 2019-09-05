@@ -32,8 +32,6 @@ import static com.sun.xml.internal.fastinfoset.util.DuplicateAttributeVerifier.M
 @Slf4j
 public class WarController {
 
-    private final static String WAR_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64";
-
     /**
      * war 包相关页面
      *
