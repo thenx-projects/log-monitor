@@ -49,6 +49,7 @@
     <modules>
         <module>monitor-cat</module>
         <module>monitor-common</module>
+        <module>monitor-entrance</module>
     </modules>
 
     <dependencies>
@@ -158,17 +159,27 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- 日志模块 -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-cat</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
+            <!-- 公共及配置模块 -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
+
+            <!-- 入口模块 -->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>monitor-entrance</artifactId>
+                <version>1.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
