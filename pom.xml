@@ -163,14 +163,14 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-cat</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0</version>
             </dependency>
 
             <!-- 公共及配置模块 -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0</version>
             </dependency>
 
             <!-- 入口模块 -->
