@@ -60,19 +60,19 @@
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:">日志监控</a></dd>
                         <dd><a href="javascript:" onclick="warPage()">War包管理</a></dd>
-                        <dd><a href="javascript:">Tomcat 管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">Tomcat 管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">Linux 服务器</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:">日志监控</a></dd>
-                        <dd><a href="javascript:" onclick="statusManager">War包管理</a></dd>
-                        <dd><a href="javascript:">Tomcat 管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">日志监控</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">War包管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">Tomcat 管理</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">服务器管理</a></li>
-                <li class="layui-nav-item"><a href="">防火墙配置</a></li>
+                <li class="layui-nav-item"><a href="" onclick="todoFuction()">服务器管理</a></li>
+                <li class="layui-nav-item"><a href="" onclick="todoFuction()">防火墙配置</a></li>
             </ul>
         </div>
     </div>
@@ -122,6 +122,10 @@
     var requestURL = 'http://localhost:8200';
     var changeLocation = [[${location}]];
     requestMethod();
+    
+    function todoFuction() {
+        alert("开发中...");
+    }
 
     /**
      * 日志路径提交
