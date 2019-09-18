@@ -122,7 +122,7 @@
     var requestURL = 'http://localhost:8200';
     var changeLocation = [[${location}]];
     requestMethod();
-    
+
     function todoFuction() {
         alert("开发中...");
     }
@@ -262,6 +262,13 @@
                         dataType: 'json',
                         success: function (data) {
                             var parsingData = JSON.stringify(data.data);
+
+                            console.log("-------> there parsing data will be : " + parsingData);
+
+                            var rep = parsingData.replace(/\\r\\n/g,"<br />");
+
+                            var tab = rep.replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
                             layer.open({
                                 title: logName,
                                 type: 1,
@@ -271,7 +278,7 @@
                                 maxmin: true,
                                 anim: 2,
                                 shadeClose: true,
-                                content: parsingData
+                                content: tab
                             });
                         }
                     });
