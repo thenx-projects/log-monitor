@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author may
- *
+ * <p>
  * log-monitor 首页相关后台接口
  */
 @Api(value = "IndexController", tags = "log-monitor 首页相关后台接口")
@@ -40,7 +40,32 @@ public class IndexController {
     /**
      * 可修改的默认路径参数
      */
-    private static String DEFAULT_LOCATION = "C:\\Users\\May\\Downloads";
+    private static String DEFAULT_LOCATION = "C:\\Users";
+
+    /**
+     * 本地测试日志路径
+     */
+    private static String TEST_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs";
+
+    /**
+     * 金上APP 日志
+     */
+    private final static String JS_APP_LOCATION = "E:\\apache-tomcat-app\\logs";
+
+    /**
+     * 施工管理系统日志路径
+     */
+    private final static String SM_LOCATION = "E:\\apache-tomcat-sm\\logs";
+
+    /**
+     * 网报日志路径
+     */
+    private final static String REIMBSTEST = "E:\\apache-tomcat-8.0.38-REIMBSTEST\\logs";
+
+    /**
+     * 系统平台日志路径
+     */
+    private final static String JS_COP = "E:\\apache-tomcat-8.0.38-JSCOPTEST\\logs";
 
     /**
      * log-monitor 首页
@@ -51,6 +76,11 @@ public class IndexController {
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(HttpServletRequest request, Model model) {
         model.addAttribute("location", DEFAULT_LOCATION);
+        model.addAttribute("test_location", TEST_LOCATION);
+        model.addAttribute("js_app_location", JS_APP_LOCATION);
+        model.addAttribute("sm_location", SM_LOCATION);
+        model.addAttribute("reimbstest", REIMBSTEST);
+        model.addAttribute("js_cop", JS_COP);
         return "index";
     }
 
@@ -63,7 +93,7 @@ public class IndexController {
     @RequestMapping(value = "/enterSm", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public boolean enterSm(String newLocation) {
-        if (! StringUtil.isNullOrEmpty(newLocation)) {
+        if (!StringUtil.isNullOrEmpty(newLocation)) {
             DEFAULT_LOCATION = newLocation;
             return true;
         } else {
