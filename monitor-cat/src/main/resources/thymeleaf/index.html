@@ -263,9 +263,7 @@
                         success: function (data) {
                             var parsingData = JSON.stringify(data.data);
 
-                            console.log("-------> there parsing data will be : " + parsingData);
-
-                            var rep = parsingData.replace(/\\r\\n/g,"<br />");
+                            var rep = parsingData.replace(/\\r\\n/g, "<br />");
 
                             var tab = rep.replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
