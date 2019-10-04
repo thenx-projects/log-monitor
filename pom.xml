@@ -160,19 +160,19 @@
             </dependency>
 
             <dependency>
-                <groupId>${project.groupId}</groupId>
+                <groupId>org.thenx.cat</groupId>
                 <artifactId>monitor-cat</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0</version>
             </dependency>
 
             <dependency>
-                <groupId>${project.groupId}</groupId>
+                <groupId>org.thenx.common</groupId>
                 <artifactId>monitor-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0</version>
             </dependency>
 
             <dependency>
-                <groupId>${project.groupId}</groupId>
+                <groupId>org.thenx.config</groupId>
                 <artifactId>monirot-config</artifactId>
                 <version>1.0</version>
             </dependency>

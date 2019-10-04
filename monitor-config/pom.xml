@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.thenx.config</groupId>
     <artifactId>monitor-config</artifactId>
     <name>monirot-config</name>
     <description>日志监控配置文件模块</description>
@@ -17,9 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.thenx.common</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>monitor-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

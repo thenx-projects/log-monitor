@@ -23,7 +23,6 @@
         <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>org.thenx.cat</groupId>
     <artifactId>monitor-cat</artifactId>
     <name>monitor-cat</name>
     <description>日志监控模块</description>
@@ -35,9 +34,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.thenx.config</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>monitor-config</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

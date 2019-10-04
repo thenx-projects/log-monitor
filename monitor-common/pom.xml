@@ -24,9 +24,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>org.thenx.common</groupId>
     <artifactId>monitor-common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>monitor-common</name>
     <packaging>jar</packaging>
     <description>公共配置模块</description>
