@@ -27,13 +27,13 @@
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">控制台</a></li>
             <li class="layui-nav-item"><a href="">日志管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item"><a href="" onclick="todoFuction()">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:">消息系统</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
+                    <dd><a href="" onclick="todoFuction()">邮件管理</a></dd>
+                    <dd><a href="" onclick="todoFuction()">消息管理</a></dd>
+                    <dd><a href="" onclick="todoFuction()">授权管理</a></dd>
                 </dl>
             </li>
         </ul>
@@ -60,19 +60,19 @@
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:">日志监控</a></dd>
                         <dd><a href="javascript:" onclick="warPage()">War包管理</a></dd>
-                        <dd><a href="javascript:">Tomcat 管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">Tomcat 管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:">Linux 服务器</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:">日志监控</a></dd>
-                        <dd><a href="javascript:" onclick="statusManager">War包管理</a></dd>
-                        <dd><a href="javascript:">Tomcat 管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">日志监控</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">War包管理</a></dd>
+                        <dd><a href="javascript:" onclick="todoFuction()">Tomcat 管理</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">服务器管理</a></li>
-                <li class="layui-nav-item"><a href="">防火墙配置</a></li>
+                <li class="layui-nav-item"><a href="" onclick="todoFuction()">服务器管理</a></li>
+                <li class="layui-nav-item"><a href="" onclick="todoFuction()">防火墙配置</a></li>
             </ul>
         </div>
     </div>
@@ -122,6 +122,10 @@
     var requestURL = 'http://localhost:8200';
     var changeLocation = [[${location}]];
     requestMethod();
+
+    function todoFuction() {
+        alert("开发中...");
+    }
 
     /**
      * 日志路径提交
@@ -258,6 +262,11 @@
                         dataType: 'json',
                         success: function (data) {
                             var parsingData = JSON.stringify(data.data);
+
+                            var rep = parsingData.replace(/\\r\\n/g, "<br />");
+
+                            var tab = rep.replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
                             layer.open({
                                 title: logName,
                                 type: 1,
@@ -267,7 +276,7 @@
                                 maxmin: true,
                                 anim: 2,
                                 shadeClose: true,
-                                content: parsingData
+                                content: tab
                             });
                         }
                     });

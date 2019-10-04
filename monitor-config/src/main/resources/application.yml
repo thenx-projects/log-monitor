@@ -37,5 +37,5 @@ spring:
 
 logging:
   level:
-    com.tgpms.web: debug
+    org.thenx: debug
 

@@ -26,7 +26,7 @@
         <legend>单个或多个War包的上传</legend>
     </fieldset>
 
-    <div class="layui-form-item">
+    <div class="layui-form-item" id="hideLocation">
         <label class="layui-form-label">
             <button class="layui-btn" lay-submit="" onclick="commits()">保存路径</button>
         </label>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="layui-upload">
+    <div class="layui-upload" id="hideDiv">
         <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
         <div class="layui-upload-list">
             <table class="layui-table">
@@ -64,12 +64,17 @@
     // var changeLocation = [[${location}]];
     var changeLocation = "";
 
+    window.onload = function () {
+        document.getElementById("hideDiv").style.display = "none";
+    };
+
     /**
      * war 包路径
      */
     function commits() {
+        document.getElementById("hideDiv").style.display = "block";
         changeLocation = document.getElementById("loca").value;
-        alert("当前路径：" + changeLocation);
+        alert("当前路径：" + changeLocation + "\n 防止误操作，点击确定后将关闭路经选择！");
         requestMethod();
     }
 
@@ -78,6 +83,8 @@
             var table = layui.table;
             var $ = layui.jquery;
             var upload = layui.upload;
+
+            document.getElementById("hideLocation").style.display = "none";
 
             //多文件列表
             var demoListView = $('#demoList')
