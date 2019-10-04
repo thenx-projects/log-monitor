@@ -49,6 +49,7 @@
     <modules>
         <module>monitor-cat</module>
         <module>monitor-common</module>
+        <module>monitor-config</module>
     </modules>
 
     <dependencies>
@@ -168,6 +169,12 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>monitor-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>monirot-config</artifactId>
+                <version>1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

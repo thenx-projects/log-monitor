@@ -35,9 +35,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.thenx.common</groupId>
-            <artifactId>monitor-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.thenx.config</groupId>
+            <artifactId>monitor-config</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
