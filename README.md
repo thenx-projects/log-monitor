@@ -54,7 +54,7 @@
 	
 	1. 每次push前执行命令:
 
-		`$ git pull --rebase upstream master`
+		`$ git pull --rebase upstream develop`
 
 	2. 如果提示出现与
 `error: Your local changes to the following files would be overwritten by merge:`
