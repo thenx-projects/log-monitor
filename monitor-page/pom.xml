@@ -37,9 +37,18 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
+        <!-- 日志查看 -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>monitor-cat</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- war 包操作 -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>monitor-manage-war</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
