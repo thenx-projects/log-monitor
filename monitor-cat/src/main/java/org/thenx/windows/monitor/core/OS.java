@@ -25,7 +25,7 @@
 
 
 
-package org.thenx.web.monitor.core;
+package org.thenx.windows.monitor.core;
 
 public class OS {
 

@@ -25,11 +25,11 @@
 
 
 
-package org.thenx.web.monitor.service.impl;
+package org.thenx.windows.monitor.service.impl;
 
-import org.thenx.web.monitor.core.CoreControl;
-import org.thenx.web.monitor.dto.LogsDto;
-import org.thenx.web.monitor.service.CatLogsService;
+import org.thenx.windows.monitor.core.CoreControl;
+import org.thenx.windows.monitor.dto.LogsDto;
+import org.thenx.windows.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;

@@ -25,11 +25,9 @@
 
 
 
-package org.thenx.web.monitor.dto;
+package org.thenx.windows.monitor.dto;
 
 import lombok.Data;
-
-import java.util.Date;
 
 @Data
 public class LogsDto {

@@ -25,9 +25,9 @@
 
 
 
-package org.thenx.web.monitor.service;
+package org.thenx.windows.monitor.service;
 
-import org.thenx.web.monitor.dto.LogsDto;
+import org.thenx.windows.monitor.dto.LogsDto;
 import org.thenx.common.vo.PageView;
 
 import java.util.List;

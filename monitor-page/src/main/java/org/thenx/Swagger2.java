@@ -58,7 +58,7 @@ public class Swagger2 {
         aParameters.add(aParameterBuilder.build());
         aParameters.add(aParameterBuilder1.build());
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo()).useDefaultResponseMessages(false).globalOperationParameters(aParameters)
-                .select().apis(RequestHandlerSelectors.basePackage("com.tgpms.web")).build();
+                .select().apis(RequestHandlerSelectors.basePackage("com.tgpms.windows")).build();
     }
 
     protected ApiInfo getApiInfo() {
