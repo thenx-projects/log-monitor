@@ -1,19 +1,27 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+/*-
+ * <<
+ * log-monitor
+ * >
+ * Copyright (C) 2019 thenx
+ * >
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * >>
  */
+
+
+
+
+
 package org.thenx.web.war.controller;
 
 import com.alibaba.fastjson.JSONObject;
@@ -33,22 +41,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @author May
- * <p>
- * War 包相关操作对外接口
- */
 @Api(value = "WarController", tags = "War 包相关操作对外接口")
 @Controller
 @RequestMapping(value = "/war")
 @Slf4j
 public class WarController {
 
-    /**
-     * war 包相关页面
-     *
-     * @return null
-     */
     @ApiOperation(value = "war 包相关页面", notes = "war 包相关页面", httpMethod = "POST")
     @GetMapping(value = "/warPage")
     public String warPage(Model model) {
@@ -56,11 +54,6 @@ public class WarController {
         return "war";
     }
 
-    /**
-     * msg页面
-     *
-     * @return null
-     */
     @ApiOperation(value = "msg页面", notes = "msg页面", httpMethod = "POST")
     @GetMapping(value = "/msg")
     public String msg() {

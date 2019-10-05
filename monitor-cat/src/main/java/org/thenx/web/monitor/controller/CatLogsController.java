@@ -1,19 +1,27 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+/*-
+ * <<
+ * log-monitor
+ * >
+ * Copyright (C) 2019 thenx
+ * >
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * >>
  */
+
+
+
+
+
 package org.thenx.web.monitor.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -39,11 +47,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author May
- * <p>
- * 日志查询相关接口
- */
 @Api(value = "CatLogsController", tags = "日志查询相关接口")
 @RestController
 @RequestMapping(value = "/monitor/CatLogsController")
@@ -53,12 +56,6 @@ public class CatLogsController {
     @Resource
     private CatLogsService catLogsService;
 
-    /**
-     * 当前目录所有日志
-     *
-     * @param location 目录地址
-     * @return null
-     */
     @ApiOperation(value = "当前目录所有日志", notes = "当前目录所有日志", httpMethod = "POST")
     @PostMapping(value = "/findAll")
     public Result findAll(@RequestParam("location") String location) {
@@ -79,13 +76,6 @@ public class CatLogsController {
         return result;
     }
 
-    /**
-     * 查询指定日志
-     *
-     * @param location 文件路径
-     * @param fileName 文件名称
-     * @return null
-     */
     @ApiOperation(value = "查询指定日志", notes = "查询指定日志", httpMethod = "POST")
     @PostMapping(value = "/catLogs")
     public Result catLogs(@RequestParam("location") String location, @RequestParam("fileName") String fileName) {
