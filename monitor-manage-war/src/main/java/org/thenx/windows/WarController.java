@@ -25,7 +25,7 @@
 
 
 
-package org.thenx.windows.war.controller;
+package org.thenx.windows;
 
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
