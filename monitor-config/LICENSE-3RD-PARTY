@@ -1,0 +1,164 @@
+
+List of third-party dependencies grouped by their license type.
+
+    Apache 2.0:
+
+        * fastjson (com.alibaba:fastjson:1.2.44 - https://github.com/alibaba/fastjson)
+        * ClassMate (com.fasterxml:classmate:1.4.0 - http://github.com/FasterXML/java-classmate)
+        * Jackson-annotations (com.fasterxml.jackson.core:jackson-annotations:2.9.0 - http://github.com/FasterXML/jackson)
+        * Jackson-core (com.fasterxml.jackson.core:jackson-core:2.9.8 - https://github.com/FasterXML/jackson-core)
+        * jackson-databind (com.fasterxml.jackson.core:jackson-databind:2.9.8 - http://github.com/FasterXML/jackson)
+        * Jackson datatype: jdk8 (com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8 - https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8)
+        * Jackson datatype: JSR310 (com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8 - https://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310)
+        * Jackson-module-parameter-names (com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.8 - https://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names)
+        * FindBugs-jsr305 (com.google.code.findbugs:jsr305:3.0.2 - http://findbugs.sourceforge.net/)
+        * Guava: Google Core Libraries for Java (com.google.guava:guava:18.0 - http://code.google.com/p/guava-libraries/guava)
+        * JSON.simple (com.googlecode.json-simple:json-simple:1.1.1 - http://code.google.com/p/json-simple/)
+        * project ':json-path' (com.jayway.jsonpath:json-path:2.4.0 - https://github.com/jayway/JsonPath)
+        * JSON library from Android SDK (com.vaadin.external.google:android-json:0.0.20131108.vaadin1 - http://developer.android.com/sdk)
+        * Spring Boot Admin Client (de.codecentric:spring-boot-admin-client:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-client/)
+        * Spring Boot Admin Server (de.codecentric:spring-boot-admin-server:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-server/)
+        * Spring Boot Admin Server Cloud (de.codecentric:spring-boot-admin-server-cloud:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-server-cloud/)
+        * Spring Boot Admin Server UI (de.codecentric:spring-boot-admin-server-ui:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-server-ui/)
+        * Spring Boot Admin Client Starter (de.codecentric:spring-boot-admin-starter-client:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-starter-client/)
+        * Spring Boot Admin Server Starter (de.codecentric:spring-boot-admin-starter-server:2.1.3 - https://github.com/codecentric/spring-boot-admin/spring-boot-admin-dependencies/spring-boot-admin-build/spring-boot-admin-starter-server/)
+        * micrometer-core (io.micrometer:micrometer-core:1.1.3 - https://github.com/micrometer-metrics/micrometer)
+        * Netty/Buffer (io.netty:netty-buffer:4.1.33.Final - http://netty.io/netty-buffer/)
+        * Netty/Codec (io.netty:netty-codec:4.1.33.Final - http://netty.io/netty-codec/)
+        * Netty/Codec/HTTP (io.netty:netty-codec-http:4.1.33.Final - http://netty.io/netty-codec-http/)
+        * Netty/Codec/HTTP2 (io.netty:netty-codec-http2:4.1.33.Final - http://netty.io/netty-codec-http2/)
+        * Netty/Codec/Socks (io.netty:netty-codec-socks:4.1.33.Final - http://netty.io/netty-codec-socks/)
+        * Netty/Common (io.netty:netty-common:4.1.33.Final - http://netty.io/netty-common/)
+        * Netty/Handler (io.netty:netty-handler:4.1.33.Final - http://netty.io/netty-handler/)
+        * Netty/Handler/Proxy (io.netty:netty-handler-proxy:4.1.33.Final - http://netty.io/netty-handler-proxy/)
+        * Netty/Resolver (io.netty:netty-resolver:4.1.33.Final - http://netty.io/netty-resolver/)
+        * Netty/Transport (io.netty:netty-transport:4.1.33.Final - http://netty.io/netty-transport/)
+        * Netty/Transport/Native/Epoll (io.netty:netty-transport-native-epoll:4.1.33.Final - http://netty.io/netty-transport-native-epoll/)
+        * Netty/Transport/Native/Unix/Common (io.netty:netty-transport-native-unix-common:4.1.33.Final - http://netty.io/netty-transport-native-unix-common/)
+        * Non-Blocking Reactive Foundation for the JVM (io.projectreactor:reactor-core:3.2.6.RELEASE - https://github.com/reactor/reactor-core)
+        * Reactor Extra utilities (io.projectreactor.addons:reactor-extra:3.2.2.RELEASE - https://github.com/reactor/reactor)
+        * Reactive Streams Netty driver (io.projectreactor.netty:reactor-netty:0.8.5.RELEASE - https://github.com/reactor/reactor-netty)
+        * springfox-core (io.springfox:springfox-core:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-schema (io.springfox:springfox-schema:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-spi (io.springfox:springfox-spi:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-spring-web (io.springfox:springfox-spring-web:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-swagger-common (io.springfox:springfox-swagger-common:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-swagger-ui (io.springfox:springfox-swagger-ui:2.6.1 - https://github.com/springfox/springfox)
+        * springfox-swagger2 (io.springfox:springfox-swagger2:2.6.1 - https://github.com/springfox/springfox)
+        * swagger-annotations (io.swagger:swagger-annotations:1.5.10 - https://github.com/swagger-api/swagger-core/modules/swagger-annotations)
+        * swagger-models (io.swagger:swagger-models:1.5.10 - https://github.com/swagger-api/swagger-core/modules/swagger-models)
+        * Bean Validation API (javax.validation:validation-api:2.0.1.Final - http://beanvalidation.org)
+        * Byte Buddy (without dependencies) (net.bytebuddy:byte-buddy:1.9.10 - http://bytebuddy.net/byte-buddy)
+        * Byte Buddy Java agent (net.bytebuddy:byte-buddy-agent:1.9.10 - http://bytebuddy.net/byte-buddy-agent)
+        * ASM based accessors helper used by json-smart (net.minidev:accessors-smart:1.2 - http://www.minidev.net/)
+        * JSON Small and Fast Parser (net.minidev:json-smart:2.3 - http://www.minidev.net/)
+        * Apache Commons Lang (org.apache.commons:commons-lang3:3.6 - http://commons.apache.org/proper/commons-lang/)
+        * Apache Log4j API (org.apache.logging.log4j:log4j-api:2.11.2 - https://logging.apache.org/log4j/2.x/log4j-api/)
+        * Apache Log4j to SLF4J Adapter (org.apache.logging.log4j:log4j-to-slf4j:2.11.2 - https://logging.apache.org/log4j/2.x/log4j-to-slf4j/)
+        * tomcat-embed-core (org.apache.tomcat.embed:tomcat-embed-core:9.0.16 - https://tomcat.apache.org/)
+        * tomcat-embed-el (org.apache.tomcat.embed:tomcat-embed-el:9.0.16 - https://tomcat.apache.org/)
+        * tomcat-embed-websocket (org.apache.tomcat.embed:tomcat-embed-websocket:9.0.16 - https://tomcat.apache.org/)
+        * AssertJ fluent assertions (org.assertj:assertj-core:3.11.1 - http://assertj.org/assertj-core)
+        * Evo Inflector (org.atteo:evo-inflector:1.2.2 - http://atteo.org/static/evo-inflector)
+        * attoparser (org.attoparser:attoparser:2.0.5.RELEASE - http://www.attoparser.org)
+        * Hibernate Validator Engine (org.hibernate.validator:hibernate-validator:6.0.14.Final - http://hibernate.org/validator/hibernate-validator)
+        * jolokia-core (org.jolokia:jolokia-core:1.6.0 - http://www.jolokia.org/jolokia-agent-parent/jolokia-core/)
+        * MapStruct Core (org.mapstruct:mapstruct:1.0.0.Final - http://mapstruct.org/mapstruct/)
+        * Objenesis (org.objenesis:objenesis:2.6 - http://objenesis.org)
+        * JSONassert (org.skyscreamer:jsonassert:1.5.0 - https://github.com/skyscreamer/JSONassert)
+        * Spring AOP (org.springframework:spring-aop:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Beans (org.springframework:spring-beans:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Context (org.springframework:spring-context:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Core (org.springframework:spring-core:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Expression Language (SpEL) (org.springframework:spring-expression:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Commons Logging Bridge (org.springframework:spring-jcl:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring TestContext Framework (org.springframework:spring-test:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Transaction (org.springframework:spring-tx:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Web (org.springframework:spring-web:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring WebFlux (org.springframework:spring-webflux:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Web MVC (org.springframework:spring-webmvc:5.1.5.RELEASE - https://github.com/spring-projects/spring-framework)
+        * Spring Boot (org.springframework.boot:spring-boot:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot)
+        * Spring Boot Actuator (org.springframework.boot:spring-boot-actuator:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-actuator)
+        * Spring Boot Actuator AutoConfigure (org.springframework.boot:spring-boot-actuator-autoconfigure:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-actuator-autoconfigure)
+        * Spring Boot AutoConfigure (org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-autoconfigure)
+        * Spring Boot Configuration Processor (org.springframework.boot:spring-boot-configuration-processor:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-tools/spring-boot-configuration-processor)
+        * Spring Boot Starter (org.springframework.boot:spring-boot-starter:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter)
+        * Spring Boot Actuator Starter (org.springframework.boot:spring-boot-starter-actuator:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-actuator)
+        * Spring Boot AOP Starter (org.springframework.boot:spring-boot-starter-aop:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-aop)
+        * Spring Boot Data REST Starter (org.springframework.boot:spring-boot-starter-data-rest:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-data-rest)
+        * Spring Boot Json Starter (org.springframework.boot:spring-boot-starter-json:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-json)
+        * Spring Boot Logging Starter (org.springframework.boot:spring-boot-starter-logging:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-logging)
+        * Spring Boot Reactor Netty Starter (org.springframework.boot:spring-boot-starter-reactor-netty:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-reactor-netty)
+        * Spring Boot Test Starter (org.springframework.boot:spring-boot-starter-test:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-test)
+        * Spring Boot Thymeleaf Starter (org.springframework.boot:spring-boot-starter-thymeleaf:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-thymeleaf)
+        * Spring Boot Tomcat Starter (org.springframework.boot:spring-boot-starter-tomcat:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-tomcat)
+        * Spring Boot Web Starter (org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-web)
+        * Spring Boot WebFlux Starter (org.springframework.boot:spring-boot-starter-webflux:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-webflux)
+        * Spring Boot Test (org.springframework.boot:spring-boot-test:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-test)
+        * Spring Boot Test Auto-Configure (org.springframework.boot:spring-boot-test-autoconfigure:2.1.3.RELEASE - https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-test-autoconfigure)
+        * Spring Data Core (org.springframework.data:spring-data-commons:2.1.5.RELEASE - http://www.spring.io/spring-data/spring-data-commons)
+        * Spring Data REST - Core (org.springframework.data:spring-data-rest-core:3.1.5.RELEASE - http://www.spring.io/spring-data/spring-data-rest-parent/spring-data-rest-core)
+        * Spring Data REST - WebMVC (org.springframework.data:spring-data-rest-webmvc:3.1.5.RELEASE - http://www.spring.io/spring-data/spring-data-rest-parent/spring-data-rest-webmvc)
+        * Spring HATEOAS (org.springframework.hateoas:spring-hateoas:0.25.1.RELEASE - http://github.com/SpringSource/spring-hateoas)
+        * Spring Plugin - Core (org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE - https://github.com/spring-projects/spring-plugin/spring-plugin-core)
+        * Spring Plugin - Metadata Extension (org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE - https://github.com/spring-projects/spring-plugin/spring-plugin-metadata)
+        * nio-multipart-parser (org.synchronoss.cloud:nio-multipart-parser:1.1.0 - https://github.com/synchronoss/nio-multipart/nio-multipart-parser)
+        * org.synchronoss.cloud:nio-stream-storage (org.synchronoss.cloud:nio-stream-storage:1.1.3 - https://github.com/synchronoss/nio-stream-storage)
+        * monitor-common (org.thenx:monitor-common:1.0 - https://projects.spring.io/spring-boot/#/spring-boot-starter-parent/log-monitor/monitor-common)
+        * thymeleaf (org.thymeleaf:thymeleaf:3.0.11.RELEASE - http://www.thymeleaf.org)
+        * thymeleaf-spring5 (org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE - http://www.thymeleaf.org)
+        * thymeleaf-extras-java8time (org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.3.RELEASE - http://www.thymeleaf.org)
+        * unbescape (org.unbescape:unbescape:1.1.6.RELEASE - http://www.unbescape.org)
+        * org.xmlunit:xmlunit-core (org.xmlunit:xmlunit-core:2.6.2 - https://www.xmlunit.org/)
+        * SnakeYAML (org.yaml:snakeyaml:1.23 - http://www.snakeyaml.org)
+
+    Apache License, version 2.0:
+
+        * JBoss Logging 3 (org.jboss.logging:jboss-logging:3.3.2.Final - http://www.jboss.org)
+
+    BSD:
+
+        * ASM Core (org.ow2.asm:asm:5.0.4 - http://asm.objectweb.org/asm/)
+
+    CC0:
+
+        * reactive-streams (org.reactivestreams:reactive-streams:1.0.2 - http://www.reactive-streams.org/)
+
+    CDDL + GPLv2 with classpath exception:
+
+        * javax.annotation API (javax.annotation:javax.annotation-api:1.3.2 - http://jcp.org/en/jsr/detail?id=250)
+
+    Eclipse Public License - v 1.0:
+
+        * Logback Classic Module (ch.qos.logback:logback-classic:1.2.3 - http://logback.qos.ch/logback-classic)
+        * Logback Core Module (ch.qos.logback:logback-core:1.2.3 - http://logback.qos.ch/logback-core)
+        * AspectJ weaver (org.aspectj:aspectjweaver:1.9.2 - http://www.aspectj.org)
+
+    Eclipse Public License 1.0:
+
+        * JUnit (junit:junit:4.12 - http://junit.org)
+
+    GNU Lesser General Public License:
+
+        * Logback Classic Module (ch.qos.logback:logback-classic:1.2.3 - http://logback.qos.ch/logback-classic)
+        * Logback Core Module (ch.qos.logback:logback-core:1.2.3 - http://logback.qos.ch/logback-core)
+
+    MIT License:
+
+        * JUL to SLF4J bridge (org.slf4j:jul-to-slf4j:1.7.25 - http://www.slf4j.org)
+        * SLF4J API Module (org.slf4j:slf4j-api:1.7.25 - http://www.slf4j.org)
+
+    New BSD License:
+
+        * Hamcrest Core (org.hamcrest:hamcrest-core:1.3 - https://github.com/hamcrest/JavaHamcrest/hamcrest-core)
+        * Hamcrest library (org.hamcrest:hamcrest-library:1.3 - https://github.com/hamcrest/JavaHamcrest/hamcrest-library)
+
+    Public Domain, per Creative Commons CC0:
+
+        * HdrHistogram (org.hdrhistogram:HdrHistogram:2.1.9 - http://hdrhistogram.github.io/HdrHistogram/)
+        * LatencyUtils (org.latencyutils:LatencyUtils:2.0.3 - http://latencyutils.github.io/LatencyUtils/)
+
+    The MIT License:
+
+        * mockito-core (org.mockito:mockito-core:2.23.4 - https://github.com/mockito/mockito)
+        * Project Lombok (org.projectlombok:lombok:1.18.6 - https://projectlombok.org)
