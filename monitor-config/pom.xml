@@ -38,9 +38,11 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
+        <!-- 引入核心功能模块 -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>monitor-common</artifactId>
+            <artifactId>monitor-core</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -14,5 +14,13 @@
     <description>日志监控项目核心模块</description>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>monitor-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
