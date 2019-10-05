@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.common.vo;
 
 import lombok.Data;
@@ -35,18 +38,9 @@ public class Result implements Serializable {
 
     private Integer code = 0;
 
-    /**
-     * 返回统计
-     */
     private Integer count = 1000;
 
-    /**
-     * 默认返回消息提醒
-     */
     private String msg = "操作成功";
 
-    /**
-     * 返回数据
-     */
     private Object data;
 }

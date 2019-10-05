@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.web.monitor.service.impl;
 
 import org.thenx.web.monitor.core.CoreControl;
@@ -55,12 +58,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return listAll(dir);
     }
 
-    /**
-     * 查询指定日志 分页版
-     *
-     * @param pageView 分页
-     * @return null
-     */
     @Override
     public PageView catLogsPage(PageView pageView) {
         CoreControl control = new CoreControl();
@@ -71,12 +68,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return pageView;
     }
 
-    /**
-     * 查询所有日志 分页版
-     *
-     * @param pageView 分页
-     * @return null
-     */
     @Override
     public PageView findAllPage(PageView pageView) {
         Map queryMap = pageView.getQueryMap();
@@ -87,12 +78,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return pageView;
     }
 
-    /**
-     * 拿到所有的日志文件
-     *
-     * @param dir 指定目录
-     * @return null
-     */
     private List<LogsDto> listAll(File dir) {
         List<LogsDto> fileData = new ArrayList<>();
         File[] files = dir.listFiles();
@@ -109,12 +94,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return fileData;
     }
 
-    /**
-     * 仅仅查询所有的日志名称
-     *
-     * @param location 路径名称
-     * @return null
-     */
     @Override
     public List<String> findAllName(String location) {
         File dir = new File(location);
@@ -130,13 +109,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return list;
     }
 
-    /**
-     * 根据日志名称查询相关日志
-     *
-     * @param location 路径
-     * @param logsName 日志名称
-     * @return null
-     */
     @Override
     public List<String> findByLogsName(String location, String logsName) {
         List<String> list = new ArrayList<>();
@@ -151,13 +123,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return list;
     }
 
-    /**
-     * 根据日志名称精确查找
-     *
-     * @param location 日志路径
-     * @param logsName 日志名称
-     * @return null
-     */
     @Override
     public List<String> findByEqualsName(String location, String logsName) {
         List<String> list = new ArrayList<>();

@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.common.exception;
 
 public class QueryException extends ProjectException {

@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.web.monitor.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -96,14 +99,6 @@ public class CatLogsController {
         }
     }
 
-    /**
-     * 查询指定日志 分页版
-     *
-     * @param location 地址
-     * @param logsName 日志名
-     * @param pageNo   分页码农
-     * @return null
-     */
     @ApiOperation(value = "查询指定日志 分页版", notes = "查询指定日志 分页版", httpMethod = "POST")
     @PostMapping(value = "/catLogsPage")
     public PageView catLogsPage(@RequestParam("location") String location, @RequestParam("fileName") String logsName,
@@ -123,13 +118,6 @@ public class CatLogsController {
         return pageView;
     }
 
-    /**
-     * 查询所有日志 分页版
-     *
-     * @param location 路径
-     * @param pageNo   页码
-     * @return null
-     */
     @ApiOperation(value = "查询所有日志 分页版", notes = "查询所有日志 分页版", httpMethod = "POST")
     @PostMapping(value = "/findAllPage")
     public PageView findAllPage(@RequestParam("location") String location, @RequestParam("pageNo") Integer pageNo) {
@@ -147,12 +135,6 @@ public class CatLogsController {
         return pageView;
     }
 
-    /**
-     * 当前目录所有日志 仅仅查询名称
-     *
-     * @param location 路径
-     * @return null
-     */
     @ApiOperation(value = "当前目录所有日志 仅仅查询名称", notes = "当前目录所有日志 仅仅查询名称", httpMethod = "POST")
     @PostMapping(value = "/findAllName")
     public Result findAllName(@RequestParam("location") String location) {
@@ -169,13 +151,6 @@ public class CatLogsController {
         return result;
     }
 
-    /**
-     * 根据日志名称查询相关日志
-     *
-     * @param location 路径
-     * @param logsName 日志名称
-     * @return null
-     */
     @ApiOperation(value = "根据日志名称查询相关日志", notes = "根据日志名称查询相关日志", httpMethod = "POST")
     @PostMapping(value = "/logsName")
     public Result logsName(@RequestParam("location") String location, @RequestParam("logsName") String logsName) {
@@ -192,13 +167,6 @@ public class CatLogsController {
         return result;
     }
 
-    /**
-     * 根据日志名称精确查找
-     *
-     * @param location 路径
-     * @param logsName 日志名称
-     * @return null
-     */
     @ApiOperation(value = "根据日志名称精确查找", notes = "根据日志名称精确查找", httpMethod = "POST")
     @PostMapping(value = "/findByEqualsName")
     public Result findByEqualsName(@RequestParam("location") String location, @RequestParam("logsName") String logsName) {

@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.web.index;
 
 import io.netty.util.internal.StringUtil;
@@ -44,31 +47,14 @@ public class IndexController {
 
     private static String TEST_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs";
 
-    /**
-     * 金上APP 日志
-     */
     private final static String JS_APP_LOCATION = "E:\\apache-tomcat-app\\logs";
 
-    /**
-     * 施工管理系统日志路径
-     */
     private final static String SM_LOCATION = "E:\\apache-tomcat-sm\\logs";
 
-    /**
-     * 网报日志路径
-     */
     private final static String REIMBSTEST = "E:\\apache-tomcat-8.0.38-REIMBSTEST\\logs";
 
-    /**
-     * 系统平台日志路径
-     */
     private final static String JS_COP = "E:\\apache-tomcat-8.0.38-JSCOPTEST\\logs";
 
-    /**
-     * log-monitor 首页
-     *
-     * @return null
-     */
     @ApiOperation(value = "log-monitor 首页", notes = "log-monitor 首页", httpMethod = "POST")
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(HttpServletRequest request, Model model) {
@@ -81,11 +67,6 @@ public class IndexController {
         return "index";
     }
 
-    /**
-     * log-monitor 保证后台同步默认值
-     *
-     * @return null
-     */
     @ApiOperation(value = "log-monitor 保证后台同步默认值", notes = "log-monitor 保证后台同步默认值", httpMethod = "POST")
     @RequestMapping(value = "/enterSm", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody

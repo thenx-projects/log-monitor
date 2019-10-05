@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.common.exception;
 
 public enum ExceptionExplain {
@@ -63,12 +66,6 @@ public enum ExceptionExplain {
 
     private String explain;
 
-    /**
-     * 构造异常状态与异常说明
-     *
-     * @param status
-     * @param explain
-     */
     ExceptionExplain(Integer status, String explain) {
         this.status = status;
         this.explain = explain;
@@ -76,11 +73,6 @@ public enum ExceptionExplain {
 
 
 
-    /**
-     * 构造异常说明
-     *
-     * @param explain
-     */
     ExceptionExplain(String explain) {
         this.explain = explain;
     }

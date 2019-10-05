@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.common.vo;
 
 import java.util.List;
@@ -33,38 +36,18 @@ public class PageView {
 
     private PageIndex pageindex;
 
-    /**
-     * 总页数
-     * 这个数是计算出来的
-     */
     private long pageCount;
 
 
-    /**
-     * 每页显示几条记录
-     */
     private int pageSize = 10;
 
 
-    /**
-     * 默认 当前页 为第一页
-     * 这个数是计算出来的
-     */
     private int pageNow = 1;
 
-    /**
-     * 总记录数
-     */
     private long rowCount;
 
-    /**
-     * 从第几条记录开始
-     */
     private int startPage;
 
-    /**
-     * 规定显示5个页码
-     */
     private int pagecode = 5;
     /**
      * 查询过滤条件

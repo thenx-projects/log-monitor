@@ -22,6 +22,9 @@
 
 
 
+
+
+
 package org.thenx.web.war.controller;
 
 import com.alibaba.fastjson.JSONObject;
@@ -60,12 +63,6 @@ public class WarController {
         return "msg";
     }
 
-    /**
-     * War 包的上传
-     *
-     * @param file war包
-     * @return null
-     */
     @ApiOperation(value = "War 包的上传", notes = "War 包的上传", httpMethod = "POST")
     @PostMapping(value = "/uploadWar")
     @ResponseBody
