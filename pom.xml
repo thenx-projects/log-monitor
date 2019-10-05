@@ -68,6 +68,11 @@
         <module>monitor-common</module>
         <module>monitor-config</module>
         <module>monitor-page</module>
+        <module>monitor-manage-war</module>
+        <module>monitor-manage-tomcat</module>
+        <module>monitor-manage-server</module>
+        <module>monitor-firewall</module>
+        <module>monitor-message</module>
     </modules>
 
     <dependencies>
@@ -198,6 +203,36 @@
             <dependency>
                 <groupId>org.thenx.page</groupId>
                 <artifactId>monitor-page</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.manage.war</groupId>
+                <artifactId>monitor-manage-war</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.manage.tomcat</groupId>
+                <artifactId>monitor-manage-tomcat</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.manage.server</groupId>
+                <artifactId>monitor-manage-server</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.firewall</groupId>
+                <artifactId>monitor-firewall</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.message</groupId>
+                <artifactId>monitor-message</artifactId>
                 <version>1.0</version>
             </dependency>
         </dependencies>
