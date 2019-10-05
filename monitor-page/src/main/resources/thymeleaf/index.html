@@ -158,7 +158,6 @@
         layer.alert(changeLocation, {
             title: '最终路径'
         });
-        window.location.reload();
     }
 
     /**
@@ -178,6 +177,9 @@
                     "newLocation": dataValue
                 },
                 success: function (result) {
+                    if (result) {
+                        $("#loca").val(dataValue);
+                    }
                 },
                 error: function (e) {
                     console.log(e.status);
