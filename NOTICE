@@ -61,6 +61,11 @@ This project includes:
   monitor-cat under Apache License, Version 2.0
   monitor-common under Apache License, Version 2.0
   monitor-config under Apache License, Version 2.0
+  monitor-firewall under Apache License, Version 2.0
+  monitor-manage-server under Apache License, Version 2.0
+  monitor-manage-tomcat under Apache License, Version 2.0
+  monitor-manage-war under Apache License, Version 2.0
+  monitor-message under Apache License, Version 2.0
   monitor-page under Apache License, Version 2.0
   Netty/Buffer under Apache License, Version 2.0
   Netty/Codec under Apache License, Version 2.0
