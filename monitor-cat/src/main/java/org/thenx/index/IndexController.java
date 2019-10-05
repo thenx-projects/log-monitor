@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,12 +17,6 @@
  * limitations under the License.
  * >>
  */
-
-
-
-
-
-
 
 
 package org.thenx.index;
@@ -34,8 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thenx.common.exception.ExceptionExplain;
-import org.thenx.common.exception.QueryException;
+import org.thenx.system.SystemType;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,14 +39,9 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController {
 
     /**
-     * windows 平台默认路径
+     * 修改了默认的路径
      */
-    private static String DEFAULT_LOCATION_WIN = "C:\\Users";
-
-    /**
-     * Linux 平台默认路径
-     */
-    private static String DEFAULT_LOCATION_LINUX = "/home";
+    public static String DEFAULT_LOCATION_CHANGE = SystemType.DEFAULT_LOCATION;
 
     private static String TEST_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs";
 
@@ -68,7 +56,7 @@ public class IndexController {
     @ApiOperation(value = "log-monitor 首页", notes = "log-monitor 首页", httpMethod = "POST")
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(HttpServletRequest request, Model model) {
-        model.addAttribute("location", DEFAULT_LOCATION_WIN);
+        model.addAttribute("location", SystemType.DEFAULT_LOCATION);
         model.addAttribute("test_location", TEST_LOCATION);
         model.addAttribute("js_app_location", JS_APP_LOCATION);
         model.addAttribute("sm_location", SM_LOCATION);
@@ -82,10 +70,10 @@ public class IndexController {
     @ResponseBody
     public boolean enterSm(String newLocation) {
         if (!StringUtil.isNullOrEmpty(newLocation)) {
-            DEFAULT_LOCATION_WIN = newLocation;
+            DEFAULT_LOCATION_CHANGE = newLocation;
             return true;
         } else {
-            DEFAULT_LOCATION_WIN = "C:\\Users\\";
+            DEFAULT_LOCATION_CHANGE = SystemType.DEFAULT_LOCATION;
             return false;
         }
     }
