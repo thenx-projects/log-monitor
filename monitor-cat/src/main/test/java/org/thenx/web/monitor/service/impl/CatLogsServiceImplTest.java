@@ -21,9 +21,9 @@
 
 
 
-package org.thenx.web.monitor.service.impl;
+package org.thenx.windows.monitor.service.impl;
 
-import org.thenx.web.monitor.service.CatLogsService;
+import org.thenx.windows.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
