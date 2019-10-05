@@ -19,9 +19,6 @@
   >>
   -->
 
-
-
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -32,17 +29,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>monitor-config</artifactId>
-    <name>monitor-config</name>
-    <description>日志监控配置文件模块</description>
+    <artifactId>monitor-core</artifactId>
+    <name>monitor-core</name>
+    <description>日志监控项目核心模块</description>
     <packaging>jar</packaging>
 
     <dependencies>
-
-        <!-- 引入核心功能模块 -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>monitor-core</artifactId>
+            <artifactId>monitor-common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -25,11 +25,11 @@
 
 
 
-package org.thenx.web.monitor.service.impl;
+package org.thenx.windows.monitor.service.impl;
 
-import org.thenx.web.monitor.core.CoreControl;
-import org.thenx.web.monitor.dto.LogsDto;
-import org.thenx.web.monitor.service.CatLogsService;
+import org.thenx.windows.WindowsControl;
+import org.thenx.windows.monitor.dto.LogsDto;
+import org.thenx.windows.monitor.service.CatLogsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -48,7 +48,7 @@ public class CatLogsServiceImpl implements CatLogsService {
 
     @Override
     public List<String> catLogs(String location, String fileName) {
-        CoreControl control = new CoreControl();
+        WindowsControl control = new WindowsControl();
         return control.core(location, fileName);
     }
 
@@ -60,7 +60,7 @@ public class CatLogsServiceImpl implements CatLogsService {
 
     @Override
     public PageView catLogsPage(PageView pageView) {
-        CoreControl control = new CoreControl();
+        WindowsControl control = new WindowsControl();
         Map map = pageView.getQueryMap();
         String location = (String) map.get("location");
         String fileName = (String) map.get("fileName");

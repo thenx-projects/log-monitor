@@ -18,16 +18,10 @@
  * >>
  */
 
-
-
-
-
-
-
-
-package org.thenx.web.monitor.core;
+package org.thenx.windows;
 
 import lombok.extern.slf4j.Slf4j;
+import org.thenx.system.OS;
 
 import java.io.BufferedReader;
 import java.io.CharArrayWriter;
@@ -38,8 +32,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * @author May
+ *
+ * Windows 下的控制
+ */
 @Slf4j
-public class CoreControl {
+public class WindowsControl {
 
     private static final int DEFAULT_BUFFER_SIZE = 4096;
 
