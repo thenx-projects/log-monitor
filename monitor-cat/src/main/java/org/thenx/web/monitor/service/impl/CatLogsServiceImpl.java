@@ -1,22 +1,5 @@
-/*-
- * <<
- * log-monitor
- * >
- * Copyright (C) 2019 thenx
- * >
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * >>
- */
+
+
 
 
 
@@ -55,12 +38,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return listAll(dir);
     }
 
-    /**
-     * 查询指定日志 分页版
-     *
-     * @param pageView 分页
-     * @return null
-     */
     @Override
     public PageView catLogsPage(PageView pageView) {
         CoreControl control = new CoreControl();
@@ -71,12 +48,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return pageView;
     }
 
-    /**
-     * 查询所有日志 分页版
-     *
-     * @param pageView 分页
-     * @return null
-     */
     @Override
     public PageView findAllPage(PageView pageView) {
         Map queryMap = pageView.getQueryMap();
@@ -87,12 +58,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return pageView;
     }
 
-    /**
-     * 拿到所有的日志文件
-     *
-     * @param dir 指定目录
-     * @return null
-     */
     private List<LogsDto> listAll(File dir) {
         List<LogsDto> fileData = new ArrayList<>();
         File[] files = dir.listFiles();
@@ -109,12 +74,6 @@ public class CatLogsServiceImpl implements CatLogsService {
         return fileData;
     }
 
-    /**
-     * 仅仅查询所有的日志名称
-     *
-     * @param location 路径名称
-     * @return null
-     */
     @Override
     public List<String> findAllName(String location) {
         File dir = new File(location);

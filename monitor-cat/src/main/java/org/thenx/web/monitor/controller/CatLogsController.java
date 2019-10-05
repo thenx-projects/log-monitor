@@ -1,22 +1,5 @@
-/*-
- * <<
- * log-monitor
- * >
- * Copyright (C) 2019 thenx
- * >
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * >>
- */
+
+
 
 
 
@@ -96,14 +79,6 @@ public class CatLogsController {
         }
     }
 
-    /**
-     * 查询指定日志 分页版
-     *
-     * @param location 地址
-     * @param logsName 日志名
-     * @param pageNo   分页码农
-     * @return null
-     */
     @ApiOperation(value = "查询指定日志 分页版", notes = "查询指定日志 分页版", httpMethod = "POST")
     @PostMapping(value = "/catLogsPage")
     public PageView catLogsPage(@RequestParam("location") String location, @RequestParam("fileName") String logsName,
@@ -123,13 +98,6 @@ public class CatLogsController {
         return pageView;
     }
 
-    /**
-     * 查询所有日志 分页版
-     *
-     * @param location 路径
-     * @param pageNo   页码
-     * @return null
-     */
     @ApiOperation(value = "查询所有日志 分页版", notes = "查询所有日志 分页版", httpMethod = "POST")
     @PostMapping(value = "/findAllPage")
     public PageView findAllPage(@RequestParam("location") String location, @RequestParam("pageNo") Integer pageNo) {
@@ -147,12 +115,6 @@ public class CatLogsController {
         return pageView;
     }
 
-    /**
-     * 当前目录所有日志 仅仅查询名称
-     *
-     * @param location 路径
-     * @return null
-     */
     @ApiOperation(value = "当前目录所有日志 仅仅查询名称", notes = "当前目录所有日志 仅仅查询名称", httpMethod = "POST")
     @PostMapping(value = "/findAllName")
     public Result findAllName(@RequestParam("location") String location) {
@@ -169,13 +131,6 @@ public class CatLogsController {
         return result;
     }
 
-    /**
-     * 根据日志名称查询相关日志
-     *
-     * @param location 路径
-     * @param logsName 日志名称
-     * @return null
-     */
     @ApiOperation(value = "根据日志名称查询相关日志", notes = "根据日志名称查询相关日志", httpMethod = "POST")
     @PostMapping(value = "/logsName")
     public Result logsName(@RequestParam("location") String location, @RequestParam("logsName") String logsName) {

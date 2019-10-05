@@ -1,22 +1,5 @@
-/*-
- * <<
- * log-monitor
- * >
- * Copyright (C) 2019 thenx
- * >
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * >>
- */
+
+
 
 
 
@@ -33,28 +16,14 @@ public class PageView {
 
     private PageIndex pageindex;
 
-    /**
-     * 总页数
-     * 这个数是计算出来的
-     */
     private long pageCount;
 
 
-    /**
-     * 每页显示几条记录
-     */
     private int pageSize = 10;
 
 
-    /**
-     * 默认 当前页 为第一页
-     * 这个数是计算出来的
-     */
     private int pageNow = 1;
 
-    /**
-     * 总记录数
-     */
     private long rowCount;
 
     /**
