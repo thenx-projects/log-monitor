@@ -20,7 +20,6 @@
   -->
 
 
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -37,9 +36,25 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
+        <!-- 日志查看 -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>monitor-cat</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- war 包操作 -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>monitor-manage-war</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- tomcat 操作 -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>monitor-manage-tomcat</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
