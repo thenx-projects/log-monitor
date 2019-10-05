@@ -59,7 +59,10 @@ public enum ExceptionExplain {
     // Token 为空
     ERROR_BY_TOKEN_EMPTY(-11, "Token 为空"),
 
-    EMPTY_BY_LOCATION_OR_FILENAME(-12, "文件路径或文件名为空")
+    EMPTY_BY_LOCATION_OR_FILENAME(-12, "文件路径或文件名为空"),
+
+    EMPTY_OR_INSUFFICIENT_PERMISSIONS(-13, "数据为空或权限不足")
+
     ;
 
     private Integer status;

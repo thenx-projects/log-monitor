@@ -48,7 +48,7 @@ public class IndexController {
     /**
      * windows 平台默认路径
      */
-    private static String DEFAULT_LOCATION_WIN = "C:\\Users";
+    private static String DEFAULT_LOCATION_WIN = "C:\\";
 
     /**
      * Linux 平台默认路径

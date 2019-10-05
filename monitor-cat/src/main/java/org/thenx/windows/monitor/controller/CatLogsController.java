@@ -71,8 +71,8 @@ public class CatLogsController {
             try {
                 allFiles = catLogsService.findAll(location);
             } catch (Exception e) {
-                result.setMsg(ExceptionExplain.ERROR_BY_QUERY.getExplain());
-                e.printStackTrace();
+                result.setMsg(ExceptionExplain.EMPTY_OR_INSUFFICIENT_PERMISSIONS.getExplain());
+                throw new QueryException(ExceptionExplain.EMPTY_OR_INSUFFICIENT_PERMISSIONS.getExplain());
             }
             result.setData(allFiles);
         }
