@@ -74,6 +74,7 @@
         <module>monitor-manage-server</module>
         <module>monitor-firewall</module>
         <module>monitor-message</module>
+        <module>monitor-core</module>
     </modules>
 
     <dependencies>
@@ -234,6 +235,12 @@
             <dependency>
                 <groupId>org.thenx.message</groupId>
                 <artifactId>monitor-message</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.thenx.core</groupId>
+                <artifactId>monitor-core</artifactId>
                 <version>1.0</version>
             </dependency>
         </dependencies>
