@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -34,7 +34,7 @@ import java.util.Objects;
 
 /**
  * @author May
- *
+ * <p>
  * Windows 下的控制
  */
 @Slf4j
@@ -42,8 +42,14 @@ public class WindowsControl {
 
     private static final int DEFAULT_BUFFER_SIZE = 4096;
 
+    /**
+     * 传入路径和文件名
+     *
+     * @param location 路径
+     * @param fileName 文件名
+     * @return x
+     */
     public List<String> core(String location, String fileName) {
-        List<String> addLine = new ArrayList<>();
         Runtime rt = Runtime.getRuntime();
         Process p = null;
         try {
@@ -51,6 +57,17 @@ public class WindowsControl {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return this.coreExe(p);
+    }
+
+    /**
+     * 执行command
+     *
+     * @param p command
+     * @return x
+     */
+    private List<String> coreExe(Process p) {
+        List<String> addLine = new ArrayList<>();
 
         CharBuffer charBuffer = CharBuffer.allocate(DEFAULT_BUFFER_SIZE);
         CharArrayWriter bufferWriter = new CharArrayWriter();
