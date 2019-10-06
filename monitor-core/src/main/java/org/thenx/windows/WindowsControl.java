@@ -57,7 +57,7 @@ public class WindowsControl {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return this.coreExe(p);
+        return coreExe(p);
     }
 
     /**
@@ -66,7 +66,7 @@ public class WindowsControl {
      * @param p command
      * @return x
      */
-    private List<String> coreExe(Process p) {
+    public static List<String> coreExe(Process p) {
         List<String> addLine = new ArrayList<>();
 
         CharBuffer charBuffer = CharBuffer.allocate(DEFAULT_BUFFER_SIZE);

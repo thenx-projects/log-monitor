@@ -34,5 +34,15 @@
     <description>Tocmat管理模块</description>
     <packaging>jar</packaging>
 
+    <dependencies>
+
+        <!-- 引入 core 核心控制 -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>monitor-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

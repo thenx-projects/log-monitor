@@ -40,7 +40,7 @@ import java.util.Objects;
 public class WindowsTomcatControl {
 
     public void rebootTomcat(String tomcatLocation) {
-        core(tomcatLocation);
+        this.core(tomcatLocation);
     }
 
     private List<String> core(String location) {
@@ -49,28 +49,6 @@ public class WindowsTomcatControl {
         Process p = null;
         try {
             p = rt.exec("cmd /c cd " + location + " & catalina.bat start");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(Objects.requireNonNull(p).getInputStream()));
-        String line = null;
-        while (true) {
-            try {
-                if ((line = br.readLine()) == null) {
-                    break;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                addLine.add(new String(Objects.requireNonNull(line).getBytes(), "GBK"));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
