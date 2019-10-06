@@ -1,11 +1,14 @@
 package org.thenx.windows.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.thenx.windows.WindowsControl;
 import org.thenx.windows.service.WindowsTomcatControlService;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -15,6 +18,7 @@ import java.util.List;
  */
 @Service
 @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, rollbackFor = Exception.class)
+@Slf4j
 public class WindowsTomcatControlServiceImpl implements WindowsTomcatControlService {
 
     /**
@@ -25,7 +29,14 @@ public class WindowsTomcatControlServiceImpl implements WindowsTomcatControlServ
      */
     @Override
     public List<String> startTomcat(String location) {
-        return null;
+        Runtime rt = Runtime.getRuntime();
+        Process p = null;
+        try {
+            p = rt.exec("cmd /c cd " + location + " & catalina.bat start");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new WindowsControl().coreExe(p);
     }
 
     /**
@@ -36,6 +47,8 @@ public class WindowsTomcatControlServiceImpl implements WindowsTomcatControlServ
      */
     @Override
     public boolean rebootTomcat(String location) {
-        return false;
+        List<String> list = this.startTomcat(location);
+        log.info("\n ----> tomcat start command: " + list);
+        return list.size() >= 1;
     }
 }
