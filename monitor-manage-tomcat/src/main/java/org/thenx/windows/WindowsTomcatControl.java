@@ -39,12 +39,22 @@ import java.util.Objects;
 @Slf4j
 public class WindowsTomcatControl {
 
+    /**
+     * 调用 tomcat 重启
+     *
+     * @param tomcatLocation tomcat 路径
+     */
     public void rebootTomcat(String tomcatLocation) {
         this.core(tomcatLocation);
     }
 
+    /**
+     * tomcat 指令，控制tomcat开启
+     *
+     * @param location 路径
+     * @return x
+     */
     private List<String> core(String location) {
-        List<String> addLine = new ArrayList<>();
         Runtime rt = Runtime.getRuntime();
         Process p = null;
         try {
@@ -52,6 +62,6 @@ public class WindowsTomcatControl {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return addLine;
+        return new WindowsControl().coreExe(p);
     }
 }

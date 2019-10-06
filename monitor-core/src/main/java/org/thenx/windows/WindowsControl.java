@@ -66,7 +66,7 @@ public class WindowsControl {
      * @param p command
      * @return x
      */
-    public static List<String> coreExe(Process p) {
+    public List<String> coreExe(Process p) {
         List<String> addLine = new ArrayList<>();
 
         CharBuffer charBuffer = CharBuffer.allocate(DEFAULT_BUFFER_SIZE);
