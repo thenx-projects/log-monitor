@@ -10,6 +10,44 @@
 
 ![avatar](./doc/projects.png)
 
+由图中我们可以看到入口为 monitor-page，这个模块既是入口也是前端页面存放的地方，旗下有6大模块做辅助：
+
+- monitor-common
+
+    1. 这个模块是存放公共代码的地方。
+
+- monitor-config
+
+    1. 这个模块是存放整个项目的配置文件的地方。
+
+- monitor-cat
+
+    1. 这个模块是存放日志查看的地方
+    
+- monitor-manage-tomcat
+
+    1. 这个模块是存放 Tomcat管理的地方，包括对Tomcat的启动、配置文件的修改等。
+
+- monitor-core
+
+    1. 这个模块是存放整个项目的核心功能模块
+
+- monitor-firewall
+
+    1. 这个模块是存放对服务器防火墙管理及调整的地方
+    
+- monitor-manage-server
+
+    1. 这个模块主要存放对服务器的管理、备份等操作
+    
+- monitor-manage-war
+
+    1. 这个模块主要是针对War、Jar的操作
+    
+- monitor-message
+
+    1. 这个模块主要是集成消息、通知等操作
+
 ----------
 
 **Git版本控制**
