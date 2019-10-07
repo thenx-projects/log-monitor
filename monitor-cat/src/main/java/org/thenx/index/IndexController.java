@@ -19,12 +19,6 @@
  */
 
 
-
-
-
-
-
-
 package org.thenx.index;
 
 import io.netty.util.internal.StringUtil;
@@ -34,8 +28,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thenx.common.exception.ExceptionExplain;
-import org.thenx.common.exception.QueryException;
+import org.thenx.common.properties.Properties;
+import org.thenx.system.SystemType;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,14 +40,9 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController {
 
     /**
-     * windows 平台默认路径
+     * 修改了默认的路径
      */
-    private static String DEFAULT_LOCATION_WIN = "C:\\Users";
-
-    /**
-     * Linux 平台默认路径
-     */
-    private static String DEFAULT_LOCATION_LINUX = "/home";
+    public static String DEFAULT_LOCATION_CHANGE = SystemType.DEFAULT_LOCATION;
 
     private static String TEST_LOCATION = "C:\\Users\\May\\Downloads\\apache-tomcat-9.0.22-windows-x64\\apache-tomcat-9.0.22\\logs";
 
@@ -68,12 +57,16 @@ public class IndexController {
     @ApiOperation(value = "log-monitor 首页", notes = "log-monitor 首页", httpMethod = "POST")
     @RequestMapping(value = "/index", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(HttpServletRequest request, Model model) {
-        model.addAttribute("location", DEFAULT_LOCATION_WIN);
+        String baseRequestProd = Properties.BASE_REQUEST_PROD;
+        request.getSession().setAttribute("request_prod", baseRequestProd);
+
+        model.addAttribute("location", SystemType.DEFAULT_LOCATION);
         model.addAttribute("test_location", TEST_LOCATION);
         model.addAttribute("js_app_location", JS_APP_LOCATION);
         model.addAttribute("sm_location", SM_LOCATION);
         model.addAttribute("reimbstest", REIMBSTEST);
         model.addAttribute("js_cop", JS_COP);
+        model.addAttribute("request_prod", request.getSession().getAttribute("request_prod"));
         return "index";
     }
 
@@ -82,10 +75,10 @@ public class IndexController {
     @ResponseBody
     public boolean enterSm(String newLocation) {
         if (!StringUtil.isNullOrEmpty(newLocation)) {
-            DEFAULT_LOCATION_WIN = newLocation;
+            DEFAULT_LOCATION_CHANGE = newLocation;
             return true;
         } else {
-            DEFAULT_LOCATION_WIN = "C:\\Users\\";
+            DEFAULT_LOCATION_CHANGE = SystemType.DEFAULT_LOCATION;
             return false;
         }
     }

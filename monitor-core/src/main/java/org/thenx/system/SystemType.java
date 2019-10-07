@@ -21,6 +21,7 @@
 package org.thenx.system;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Configuration;
 import org.thenx.common.exception.ExceptionExplain;
 import org.thenx.common.exception.QueryException;
 
@@ -30,6 +31,7 @@ import org.thenx.common.exception.QueryException;
  * 判断当前的操作系统
  */
 @Slf4j
+@Configuration
 public class SystemType {
 
     /**
@@ -37,12 +39,19 @@ public class SystemType {
      */
     public static String SYSTEM_OS = "Windows";
 
+    /**
+     * 默认系统路径
+     */
+    public static String DEFAULT_LOCATION = "";
+
     static {
         log.info("\n ------> right here the system os is: " + System.getProperties().getProperty("os.name"));
         log.info("\n ------> right here the file type is : " + System.getProperties().getProperty("file.separator"));
         String system = System.getProperties().getProperty("file.separator");
         if ("\\".equals(system)) {
+            String property = System.getProperty("user.name");
             SYSTEM_OS = "Windows";
+            DEFAULT_LOCATION = "C:\\Users\\" + property + "\\Documents\\";
         } else if ("/".equals(system)) {
             SYSTEM_OS = "Linux";
         } else {

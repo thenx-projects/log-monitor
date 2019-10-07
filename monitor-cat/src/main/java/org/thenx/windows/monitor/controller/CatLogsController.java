@@ -19,12 +19,6 @@
  */
 
 
-
-
-
-
-
-
 package org.thenx.windows.monitor.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -71,8 +65,9 @@ public class CatLogsController {
             try {
                 allFiles = catLogsService.findAll(location);
             } catch (Exception e) {
-                result.setMsg(ExceptionExplain.ERROR_BY_QUERY.getExplain());
-                e.printStackTrace();
+                result.setMsg(ExceptionExplain.EMPTY_OR_INSUFFICIENT_PERMISSIONS.getExplain());
+                e.getStackTrace();
+//                throw new QueryException(ExceptionExplain.EMPTY_OR_INSUFFICIENT_PERMISSIONS.getExplain());
             }
             result.setData(allFiles);
         }

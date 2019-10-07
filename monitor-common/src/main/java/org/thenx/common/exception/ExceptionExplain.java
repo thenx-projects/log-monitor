@@ -19,12 +19,6 @@
  */
 
 
-
-
-
-
-
-
 package org.thenx.common.exception;
 
 public enum ExceptionExplain {
@@ -40,7 +34,7 @@ public enum ExceptionExplain {
     ERROR_BY_UPDATE(-2, "修改失败"),
     ERROR_BY_DELETE(-3, "删除失败"),
     ERROR_BY_QUERY(-4, "查询异常"),
-    
+
 
     // 空信息描述
     EMPTY_BY_DATA(-5, "数据为空"),
@@ -52,15 +46,16 @@ public enum ExceptionExplain {
     // 其他异常信息描述
     ERROR_BY_INSERT_REPETITION(-8, "增加重复"),
     ERROR_BY_QUERY_ENPTY(-9, "查询结果为空"),
-    
+
     //Vform错误
-    ERROR_BY_VFORM_POST(-10,"同步请求失败"),
+    ERROR_BY_VFORM_POST(-10, "同步请求失败"),
 
     // Token 为空
     ERROR_BY_TOKEN_EMPTY(-11, "Token 为空"),
 
-    EMPTY_BY_LOCATION_OR_FILENAME(-12, "文件路径或文件名为空")
-    ;
+    EMPTY_BY_LOCATION_OR_FILENAME(-12, "文件路径或文件名为空"),
+
+    EMPTY_OR_INSUFFICIENT_PERMISSIONS(-13, "数据为空或权限不足");
 
     private Integer status;
 
@@ -70,7 +65,6 @@ public enum ExceptionExplain {
         this.status = status;
         this.explain = explain;
     }
-
 
 
     ExceptionExplain(String explain) {

@@ -19,12 +19,6 @@
  */
 
 
-
-
-
-
-
-
 package org.thenx.windows.monitor.service.impl;
 
 import org.thenx.windows.WindowsControl;
@@ -102,7 +96,7 @@ public class CatLogsServiceImpl implements CatLogsService {
         for (LogsDto logsDto : logsDtos) {
             String logsName = logsDto.getLogsName();
             String substring = logsName.substring(0, logsName.indexOf("."));
-            if (! list.contains(substring)) {
+            if (!list.contains(substring)) {
                 list.add(substring);
             }
         }
