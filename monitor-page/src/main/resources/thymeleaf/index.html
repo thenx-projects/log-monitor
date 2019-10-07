@@ -43,6 +43,13 @@
                     <dd><a href="" onclick="todoFuction()">授权管理</a></dd>
                 </dl>
             </li>
+            <li class="layui-nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="layui-nav-item"><span style="float: left">当前项目接口前缀为：</span><input type="text" name="base"
+                                              lay-verify="title" autocomplete="off"
+                                              placeholder="请输入路径"
+                                              class="layui-input" id="base"
+                                              th:value="${request_prod}"
+                                              disabled="disabled" style="width: 300px;"></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -126,7 +133,7 @@
 <script th:src="@{/layui.js}"></script>
 
 <script th:inline="javascript">
-    var requestURL = 'http://localhost:8200';
+    var requestURL = [[${request_prod}]];
     var changeLocation = [[${location}]];
     requestMethod();
 

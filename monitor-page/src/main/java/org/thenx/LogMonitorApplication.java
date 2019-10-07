@@ -19,12 +19,6 @@
  */
 
 
-
-
-
-
-
-
 package org.thenx;
 
 
@@ -33,7 +27,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+import org.thenx.common.properties.Properties;
 
+/**
+ * @author May
+ * <p>
+ * 项目入口即启动类
+ */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class LogMonitorApplication extends SpringBootServletInitializer {
 
@@ -45,6 +46,14 @@ public class LogMonitorApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         // 设置启动类,用于独立tomcat运行的入口
         return builder.sources(LogMonitorApplication.class);
+    }
+
+    /**
+     * 启动加载Common中的Properties方法获取BASE接口地址
+     */
+    @Bean
+    public void startPropertiesRead() {
+        new Properties();
     }
 
 }
