@@ -25,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * @author May
@@ -41,9 +42,10 @@ public class Properties implements Serializable {
 
     static {
         java.util.Properties properties = new java.util.Properties();
-        InputStream resourceAsStream = Object.class.getResourceAsStream("/request.properties");
+        InputStream resourceAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("request.properties");
+
         try {
-            properties.load(resourceAsStream);
+            properties.load(Objects.requireNonNull(resourceAsStream));
         } catch (IOException e) {
             e.printStackTrace();
         }
