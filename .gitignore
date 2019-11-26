@@ -1,6 +1,7 @@
 HELP.md
 1.bat
-GitGee_fat.jar
+gitee_test/
+gitee_test/**
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
